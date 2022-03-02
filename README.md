@@ -1,2 +1,2 @@
-# VuwWebsitePractice
-VuwWebsitePractice
+# VueWebsitePractice
+VueWebsitePractice
