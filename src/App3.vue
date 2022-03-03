@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Teachers</h1>
+    <h1>Teachersttttttttttttttttttt</h1>
     <ul>
       <li v-for="teacher in teachers" :key="teacher.id">
         {{ teacher.id }} | {{ teacher.name }}
