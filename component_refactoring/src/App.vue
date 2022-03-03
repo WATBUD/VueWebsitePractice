@@ -64,8 +64,12 @@ export default {
       this.languages=languages;
     },
     reloadPage(){
-    location.reload();
+    //location.reload();
+    //window.reload();
+      this.$router.push('/')
+      //this.$router.push('/component_refactoring')
     },
+
   },
 };
 </script>
