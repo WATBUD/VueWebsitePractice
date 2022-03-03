@@ -1,6 +1,13 @@
 <template>
 <div >
+
+
+
+
+
+
 <router-link to="/two_sum_less_than_k">Go to two_sum_less_than_k</router-link><br/>
+<!-- <div@click="routerGo()">two_sum_less_than_k</div><br/> -->
 <router-link to="/component_refactoring">Go to component_refactoring</router-link><br/>
 <!-- <div id="Area1" class="GroupArea" >
 
@@ -22,7 +29,6 @@
 
 <script>
 import "./DemoListUI.css"
-
 export default  {
   name: "App",
   data() {
@@ -39,6 +45,11 @@ export default  {
 
   },
   methods: {
+    routerGo(){
+      //this.$router.go('two_sum_less_than_k');
+      this.$router.push('/two_sum_less_than_k')
+      //this.$router.href('/two_sum_less_than_k');
+    }
   },
 };
 </script>

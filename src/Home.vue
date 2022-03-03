@@ -1,5 +1,8 @@
 <template>
-<section>
+<section style="margin: 0px;
+    display: flex;
+    width: 100%;
+    height: 100%;">
 <!-- <router-link to="/">back to the homepage</router-link> -->
     <div id="NavArea" style="
             position: fixed;
@@ -18,10 +21,11 @@
             "  @click="routeDesignation()"> HomePage
 
         </div>
-    </div>
-<router-view style="    margin-top: 45px;
-    position: absolute;"></router-view>
+  </div>
+<router-view style="margin-top: 45px;position: absolute;"></router-view>
+
 </section>
+
 </template>
 
 <script>
@@ -29,10 +33,10 @@ import "./NavUI.css"
 export default  {
   name: "App",
   data() {
-    // TODO: focus to design teacher pagination state
     return {
-      teachers: [],
-      selectedTeacherId: 0,
+        //source:"https://en.wikipedia.org/wiki/Main_Page",
+        source:"./interviewer_louis.html",
+
     };
   },
   beforeMount() {
@@ -50,6 +54,7 @@ export default  {
          }
       });
     }
+    ,
   },
 };
 </script>
@@ -57,8 +62,22 @@ export default  {
 <style>
 #app {
   font-family: Arial, Helvetica, sans-serif;
+margin: 0px;
+display: flex;
+width: 100%;
+height: 100%;
+}
+body {
+  margin: 0px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+html {
+height: 100%;
 }
 
+    
 
 span {
   padding: 2px 4px;

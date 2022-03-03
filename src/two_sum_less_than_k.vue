@@ -1,13 +1,8 @@
 <template>
-<div>
-  sdfffffffffffffffffffffffffffff
-  <!-- <iframe id="embedIframe" style="margin-top: 3vh;" width="100%" height="100%" frameBorder="0" :src='src'>
+<div id="stataDiv">
+  <iframe :src='source' id="embedIframe" style="margin-top: 3vh;" width="100%" height="100%" frameBorder="0" ref="iframe">
 
-  </iframe> -->
-
-
-        <!-- <iframe id="myFrame" :src='src' :style="frameStyle" ref="iframe" ></iframe> -->
-
+  </iframe>
 </div>
 </template>
 
@@ -17,8 +12,7 @@ export default {
   data() {
     // TODO: focus to design teacher pagination state
     return {
-      src:"./two_sum_less_than_k/interviewer_louis.html",
-      selectedTeacherId: 0,
+        source:"./interviewer_louis.html",
     };
   },
   beforeMount() {
@@ -33,19 +27,12 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-#rightWindow {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 360px;
-  background-color: antiquewhite;
-  margin: 0;
-  padding: 22px;
+#stataDiv {
+margin: 0px;
+display: flex;
+width: 100%;
+height: 100%;
 }
 
 span {
