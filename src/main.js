@@ -12,6 +12,7 @@ export const router = createRouter(
 {
     history: createWebHistory(), 
     routes: [
+    // { path:'/:catchAll(.*)',redirect: '/'},
     { path: '/', component: DemoListUI }, 
     { path: '/DemoListUI', component: DemoListUI }, 
     { path: '/two_sum_less_than_k', component: two_sum_less_than_k },

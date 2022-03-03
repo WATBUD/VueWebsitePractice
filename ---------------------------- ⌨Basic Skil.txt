@@ -1,0 +1,51 @@
+---------------------------- ⌨Basic Skills-----------------------------
+⌨Web skill:HTML/CSS/JavaScript/.NET Webform/Node.js/Angular/Vue自學中
+⌨Programming:C#/C++/Python/Java/VBScript/PHP/TypeScript/javascript
+⌨Framework:Winform/.NET Webform/MVC /Angular/Unity3D/Construct
+⌨Database:MySql/MSSQL
+⌨Computer skill：
+☁️Win7/Win10 system operation Office(Excel Word PowerPoint)  
+☁️Refill system/hardware disassembly/assembly computer
+☁️PowerDirector、Adobe Premiere video editing
+⌨Development experience:
+1.PHP+MYSQL+XAMPP前端網頁與伺服器架設
+2.APS.NET/WebForm/MVC+MSSQL+IIS前端網頁與伺服器架設
+3.Unity3D+MYSQL+Python+Lua 博弈網頁、手機遊戲開發
+4.Construct 2D遊戲設計開發
+5.LineBot 機器人
+6.Angular 前端網頁與伺服器架設
+7.Angular+Electron+Typescript+Node.js電腦耳機 、滑鼠、鍵盤、軟體設計開發
+Residential Server Use:IIS+SQL Server +Visual Studio IDE 
+University topics:飛絡力拳擊機遊戲程式，使用Unity game engine development，主要利用RS232與電路板連接，以C#陣列寫入指定記憶體位置下Command。
+將遊戲以3D動作呈現在拳擊機，根據偵測光影速度表現分數至畫面。
+時常利用空餘時間學習程式相關知識，期望從各個方面來完善自己，全面提高自己的綜合素質，鍛鍊了組織能力和溝通協調能力。
+---------------------------- ⌨Angular Demo web works and tools-----------------------------
+https://demolistui.netlify.app/DemoListUI
+-----------------------------⌨FB teaching fan page-----------------------------
+https://www.facebook.com/WATERBUD
+-----------------------------⌨Youtube teaching channel-----------------------------
+https://www.youtube.com/playlist?list=PLqWQtwjE91RyJR2sKrK_-TXHVLCdrJno7
+-----------------------------⌨Software application works-----------------------------
+☁️ Glorious core Software:https://www.pcgamingrace.com/pages/glorious-core
+☁️ Glorious Model O Wireless Video:https://www.youtube.com/watch?v=9B3cLne5g_g
+☁️ Glorious Model D Wireless Video:https://www.youtube.com/watch?v=o_eL-9ImsLw
+☁️ Gamakay Mk61 Software:https://www.youtube.com/watch?v=5sSL1Ze9Npk
+☁️ Lian Li Uni Fan 1.0SL:https://www.youtube.com/watch?v=wIdmHoPk-yM&t=393s
+☁️ Lian Li Uni Fan 2.0AL:https://www.youtube.com/watch?v=8dQ7X_shq_w
+---------------------------- ⌨近期下班自學Vue網站 鑽研中(Demo web works and tools)-----------------------------
+https://vuewebsitepractice.netlify.app/
+-----------------------------⌨大學時期獨立小遊戲作品展示-----------------------------
+http://water.byethost14.com/
+大學時期小網站已無更新有少部分個人開發的小遊戲
+大學時間裏，課堂教學極少透過用課餘時間獨立熬夜開發，做成遊戲。
+http://watbud.ddns.net/ShowWebEffect/Website/Game/1.7
+http://watbud.ddns.net/ShowWebEffect/Website/Game/CatchCat
+http://watbud.ddns.net/ShowWebEffect/Website/Game/KulloGame/By.html
+http://watbud.ddns.net/ShowWebEffect/Website/Game/C2BrickBreaker
+http://watbud.ddns.net/ShowWebEffect/Website/Game/C2Peg solitaire
+http://watbud.ddns.net/ShowWebEffect/Website/Game/C2RoachGame
+http://watbud.ddns.net/ShowWebEffect/Website/Game/C2POLICE
+http://watbud.ddns.net/ShowWebEffect/Website/Game/C2StickGame
+http://watbud.ddns.net/ShowWebEffect/Website/Game/WATBUDBIRD
+http://watbud.ddns.net/ShowWebEffect/Website/Game/Unity2DPacman
+http://watbud.ddns.net/ShowWebEffect/Website/Game/BlackWindows3.0

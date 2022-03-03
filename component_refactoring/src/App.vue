@@ -65,8 +65,7 @@ export default {
     },
     reloadPage(){
     location.reload();
-    }
-
+    },
   },
 };
 </script>
