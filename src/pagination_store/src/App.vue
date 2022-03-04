@@ -1,4 +1,5 @@
 <template>
+<div id="main">
   <div class="container">
     <h1>Teachers</h1>
     <ul>
@@ -35,6 +36,7 @@
       <br /><br />
       <a href="#" @click="seeMore(0)">(close this tab)</a>
     </div>
+  </div>
   </div>
 </template>
 
@@ -87,15 +89,29 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 5px auto;
+  width: 500px;
+  border: 1px solid;
+  padding: 10px;
+  width: 100vw;
+    height: 100vh;
+}
+
+
+
 #rightWindow {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 360px;
-  background-color: antiquewhite;
-  margin: 0;
-  padding: 22px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 360px;
+    background-color: rgb(250 235 215);
+    margin: 0;
+    padding: 22px;
 }
 
 span {

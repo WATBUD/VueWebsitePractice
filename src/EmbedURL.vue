@@ -8,16 +8,33 @@
 
 <script>
 export default {
-  name: "App",
+  name: "EmbedURL",
+
+
+    props: {
+    inputEmbedURL: {
+      type: String,
+      default: null
+    }
+  }
+  ,
   data() {
     // TODO: focus to design teacher pagination state
     return {
-        source:"./interviewer_louis.html",
+      source:'/'+this.$route.params.inputEmbedURL+'.html',
+      test_Source1:'sadadad',
     };
   },
-  beforeMount() {
+  created(){
+     //setTimeout(() => {
+      console.log('%c this.$route.params', 'background: blue; color: red',this.$route.params);
+    // }, 1000);
 
+  }
+  ,
+  beforeMount() {
   },
+
   computed: {
 
   },

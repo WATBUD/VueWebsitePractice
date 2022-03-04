@@ -7,9 +7,11 @@
     <input id="toggle" class="btn-toggle" type="checkbox" checked>
     <label class="toggleBtn" for="toggle">Keyboard Sample Demo</label>
     <ul>
-    <li><router-link to="/two_sum_less_than_k">two_sum_less_than_k</router-link></li>
+    <!-- <li><router-link to="/two_sum_less_than_k">two_sum_less_than_k</router-link></li> -->
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'two_sum_less_than_k' }}">two_sum_less_than_k</router-link></li>
     <li><router-link to="/component_refactoring">component_refactoring</router-link></li>
     <li><router-link to="/pagination_store">pagination_store</router-link></li>
+
     </ul>
   </div>
 </div>

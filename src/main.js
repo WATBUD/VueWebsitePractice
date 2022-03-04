@@ -3,11 +3,12 @@ import { createApp } from 'vue'//createApp
 import { createRouter, createWebHistory } from 'vue-router'
 import DemoListUI from './DemoListUI.vue'
 import Home from './Home.vue'
-import two_sum_less_than_k from './two_sum_less_than_k.vue'
 //import interviewer_louis from './interviewer_louis.html'
 
-import component_refactoring from '../component_refactoring/src/App.vue'
-import pagination_store from '../pagination_store/src/App.vue'
+
+import EmbedURL from './EmbedURL.vue'
+import component_refactoring from './component_refactoring/src/App.vue'
+import pagination_store from './pagination_store/src/App.vue'
 
 export const router = createRouter(
 {
@@ -16,7 +17,10 @@ export const router = createRouter(
     // { path:'/:catchAll(.*)',redirect: '/'},
     { path: '/', component: DemoListUI }, 
     { path: '/DemoListUI', component: DemoListUI }, 
-    { path: '/two_sum_less_than_k', component: two_sum_less_than_k },
+    { path: '/EmbedURL/:inputEmbedURL', 
+    name: 'EmbedURL',
+    component: EmbedURL,
+    param:true},
     { path: '/component_refactoring', component: component_refactoring },
     { path: '/pagination_store', component: pagination_store },
 
