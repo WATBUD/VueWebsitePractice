@@ -36,7 +36,6 @@
       <br /><br />
       <a href="#" @click="seeMore(0)">(close this tab)</a>
     </div>
-    
   </div>
   </div>
 </template>

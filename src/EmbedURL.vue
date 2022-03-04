@@ -9,8 +9,6 @@
 <script>
 export default {
   name: "EmbedURL",
-
-
     props: {
     inputEmbedURL: {
       type: String,

@@ -1,4 +1,4 @@
-const MAX_NUMBER = 8;
+const MAX_NUMBER = 2;
 const MIN_NUMBER = 1;
 const TIMEOUT_ERROR_TIME = 6000;
 
