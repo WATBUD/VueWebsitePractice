@@ -1,28 +1,17 @@
+
 <template>
-<div >
-
-
-
-
-
-
-<router-link to="/two_sum_less_than_k">Go to two_sum_less_than_k</router-link><br/>
+<div>
 <!-- <div@click="routerGo()">two_sum_less_than_k</div><br/> -->
-<router-link to="/component_refactoring">Go to component_refactoring</router-link><br/>
-<!-- <div id="Area1" class="GroupArea" >
-
-  <div id="Keyboard Sample Demo" class="list-group">
+<div id="Area1" class="GroupArea" >
+  <div id="Practice Example" class="list-group">
     <input id="toggle" class="btn-toggle" type="checkbox" checked>
     <label class="toggleBtn" for="toggle">Keyboard Sample Demo</label>
     <ul>
-      <li routerLink="/KeyBoard_RGB" routerLinkActive="active">KeyBoard_RGB</li>
-      <li routerLink="/numpad-keyboard" routerLinkActive="active">numpad-keyboard</li>
-      <li routerLink="/perixx" routerLinkActive="active">perixx</li>
-
+    <li><router-link to="/two_sum_less_than_k">Go to two_sum_less_than_k</router-link></li>
+    <li><router-link to="/component_refactoring">Go to component_refactoring</router-link></li>
     </ul>
   </div>
-
-</div> -->
+</div>
 
 </div>
 </template>
