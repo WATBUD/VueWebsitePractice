@@ -6,12 +6,14 @@
     @setLanguages="setLanguages"
     v-if="currentStep === 'language'">
     </selectLanguage>
+    
     <selectAge @stepChange="currentStep" 
     @onPrev="onPrev"
     @onNext="onNext"
     @setAges="setAges"
     v-if="currentStep === 'age'">
     </selectAge>
+
     <div class="card" v-if="currentStep === 'final'">
       <h4>測驗結果</h4>
       <h4>Ages</h4>

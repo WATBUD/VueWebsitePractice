@@ -16,6 +16,7 @@
             type="checkbox"
             id="chinese"
             value="Chinese"
+            v-model="languages"
           />
           Chinese
         </label>
