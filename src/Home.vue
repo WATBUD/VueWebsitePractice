@@ -22,7 +22,7 @@
 
         </div>
   </div>
-<router-view style="margin-top: 45px;position: absolute;"></router-view>
+<router-view style="margin-top: 29px;position: absolute;"></router-view>
 
 </section>
 
@@ -59,9 +59,9 @@ export default  {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 margin: 0px;
 display: flex;
 width: 100%;
@@ -87,8 +87,5 @@ span {
   color: white;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+
 </style>

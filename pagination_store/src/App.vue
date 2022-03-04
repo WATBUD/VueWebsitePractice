@@ -86,12 +86,7 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  padding: 0 24px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+<style scoped>
 #rightWindow {
   position: absolute;
   right: 0;

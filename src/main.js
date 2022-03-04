@@ -4,10 +4,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DemoListUI from './DemoListUI.vue'
 import Home from './Home.vue'
 import two_sum_less_than_k from './two_sum_less_than_k.vue'
-
 //import interviewer_louis from './interviewer_louis.html'
 
 import component_refactoring from '../component_refactoring/src/App.vue'
+import pagination_store from '../pagination_store/src/App.vue'
+
 export const router = createRouter(
 {
     history: createWebHistory(), 
@@ -17,6 +18,7 @@ export const router = createRouter(
     { path: '/DemoListUI', component: DemoListUI }, 
     { path: '/two_sum_less_than_k', component: two_sum_less_than_k },
     { path: '/component_refactoring', component: component_refactoring },
+    { path: '/pagination_store', component: pagination_store },
 
     ],
 });

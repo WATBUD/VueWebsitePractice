@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 #stataDiv {
 margin: 0px;
@@ -35,16 +35,4 @@ width: 100%;
 height: 100%;
 }
 
-span {
-  padding: 2px 4px;
-  margin: 0 4px;
-  background-color: lightgray;
-  border-radius: 4px;
-  color: white;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
 </style>

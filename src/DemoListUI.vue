@@ -7,8 +7,9 @@
     <input id="toggle" class="btn-toggle" type="checkbox" checked>
     <label class="toggleBtn" for="toggle">Keyboard Sample Demo</label>
     <ul>
-    <li><router-link to="/two_sum_less_than_k">Go to two_sum_less_than_k</router-link></li>
-    <li><router-link to="/component_refactoring">Go to component_refactoring</router-link></li>
+    <li><router-link to="/two_sum_less_than_k">two_sum_less_than_k</router-link></li>
+    <li><router-link to="/component_refactoring">component_refactoring</router-link></li>
+    <li><router-link to="/pagination_store">pagination_store</router-link></li>
     </ul>
   </div>
 </div>
@@ -43,22 +44,6 @@ export default  {
 };
 </script>
 
-<style>
-#app {
-  font-family: Arial, Helvetica, sans-serif;
-}
+<style scoped>
 
-
-span {
-  padding: 2px 4px;
-  margin: 0 4px;
-  background-color: lightgray;
-  border-radius: 4px;
-  color: white;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
 </style>
