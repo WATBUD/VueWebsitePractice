@@ -5,7 +5,7 @@
 <div id="Area1" class="GroupArea" >
   <div id="Practice Example" class="list-group">
     <input id="toggle" class="btn-toggle" type="checkbox" checked>
-    <label class="toggleBtn" for="toggle">Keyboard Sample Demo</label>
+    <label class="toggleBtn" for="toggle">Practice Example</label>
     <ul>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'two_sum_less_than_k' }}">two_sum_less_than_k</router-link></li>
     <li><router-link to="/component_refactoring">component_refactoring</router-link></li>
