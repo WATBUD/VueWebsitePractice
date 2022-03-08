@@ -54,6 +54,7 @@
         />
       </div>
       <button @click="saveClipCanvasImage">saveClipCanvasImage</button>
+      <button @click="this.OnEditing=false;">Cancel</button>
 
     </div>
     <!-- Choose a profile picture: -->
