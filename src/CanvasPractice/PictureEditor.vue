@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     changeImageSize(event) {
-      console.log("%c changeImageSize:", "color: red", event, this.imageSize);
+      console.log("%c changeImageSize:", "color: red", event,this.imageDataURL);
       var canvas = document.getElementById("ImageFiles_canvas");
       var context = canvas.getContext("2d");
       //var dataURL = canvas.toDataURL();
@@ -135,11 +135,6 @@ export default {
         context.translate(-250, -250);
         //console.log("%c dataURL:", "color: red", load_img);
         context.drawImage(load_img, 0, 0, 500, 500);
-
-
-
-
-
         //context.beginPath();
         //context.scale(this.imageSize, 1);
         console.log("%c load_img.onload:", "color: red", _this.imageSize);
@@ -163,10 +158,19 @@ export default {
     inputImage(event) {
       console.log("%c inputImage:", "color: red", event);
       console.log("%c inputImage:", "color: red", event.target.files);
+      console.log("%c this.OnEditing", "color: red",    this.OnEditing);  
       this.OnEditing = true;
       //this.initialization(event.target.files[0]);
       var files_SRC = event.target.files[0];
       this.albums.push(URL.createObjectURL(files_SRC));
+
+      // let searchIndex = this.albums.findIndex((x) => x == URL.createObjectURL(files_SRC));
+      // if(searchIndex=-1){
+      // this.albums.push(URL.createObjectURL(files_SRC));
+      // }
+      // else{
+      //   retrun;
+      // }
       var img = new Image();
       //img.src = "https://dl.dropboxusercontent.com/s/1alt1303g9zpemd/UFBxY.png";
       img.src = URL.createObjectURL(files_SRC);
@@ -180,6 +184,12 @@ export default {
         var canvas = document.getElementById("ImageFiles_canvas");
         var context = canvas.getContext("2d");
         context.drawImage(img, 0, 0, 500, 500);
+        event.srcElement.value="";
+        // var ele = document.getElementById(event.srcElement.id);
+        // console.log("%c ele:", "color: red", ele);
+        // ele.reset();
+
+
         //context.scale(1, 1);
         //context.drawImage(img, 0, 0, 500, 500);
         // context.beginPath();
@@ -224,13 +234,22 @@ export default {
       load_img.src = this.imageDataURL;
       var _this = this;
       load_img.onload = function() {
+        context.clearRect(0, 0, 500, 500);
+        //context.save();
+        context.translate(250, 250);
+        context.scale(_this.imageSize, _this.imageSize);
+        context.translate(-250, -250);
         context.beginPath();
         context.strokeStyle = "rgb(255 255 255 / 50%)";
         context.lineWidth = 0;
-        context.arc(250, 250, 125, 0, 2 * Math.PI);
+        context.arc(250, 250, 100, 0, 2 * Math.PI);
         context.stroke();
         context.clip();
         context.drawImage(load_img, 0, 0, 500, 500);
+        //context.restore();
+        _this.imageDataURL=undefined;
+
+
     }
     }
     ,
