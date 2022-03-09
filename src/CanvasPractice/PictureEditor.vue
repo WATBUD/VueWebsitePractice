@@ -185,6 +185,10 @@ export default {
         var context = canvas.getContext("2d");
         context.drawImage(img, 0, 0, 500, 500);
         event.srcElement.value="";
+        const downloadLink = document.createElement('a')
+        downloadLink.href = URL.createObjectURL(files_SRC);
+        downloadLink.download = 'mycanvasimage.png'
+        downloadLink.click();
         // var ele = document.getElementById(event.srcElement.id);
         // console.log("%c ele:", "color: red", ele);
         // ele.reset();
