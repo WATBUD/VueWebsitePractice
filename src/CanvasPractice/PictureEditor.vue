@@ -31,18 +31,18 @@
     align-items: center;
     overflow: hidden;"
         >
-          <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"></canvas>
+          <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"
+            @mousemove="pictureEditor.captureFootageMousemove"
+            @mousedown="pictureEditor.captureFootageMousedown"
+          ></canvas>
           <!-- <canvas id="CanvasMask" style="position: absolute;" width="500" height="500"></canvas> -->
           <div
             id="mask"
-            @mousemove="captureFootageMousemove"
-            @mousedown="captureFootageMousedown"
-            @mouseup="captureFootageMouseup"
             style="width: 250px;
-    height: 250px;
-    position: absolute;
-    border: 250px solid rgb(22 22 22 / 58%);
-    border-radius: 50%;"
+            pointer-events: none;height: 250px;
+            position: absolute;
+            border: 250px solid rgb(22 22 22 / 58%);
+            border-radius: 50%;"
           ></div>
         </div>
 
@@ -56,7 +56,7 @@
         />
       </div>
       <button @click="pictureEditor.saveClipCanvasImage">saveClipCanvasImage</button>
-      <button @click="pictureEditor.onEditing=false;">Cancel</button>
+      <button @click="pictureEditor.onEditing=false;pictureEditor.imageSize = 1;">Cancel</button>
     </div>
     <!-- Choose a profile picture: -->
     <label for="avatar">Update Image:</label>
@@ -78,6 +78,7 @@
         :key="item.id"
         :src="item"
         :index="'img_'+index"
+        :id="'img_'+index"
         width="100"
         height="100"
         alt
@@ -113,32 +114,7 @@ export default {
 
   },
   methods: {
-    captureFootageMouseup(event) {
-      console.log("%c captureFootageMouseup:", "color: red", event);
-      this.pictureEditor.isDragging=false;
-    },
-    captureFootageMousemove(event) {
-      console.log("%c captureFootageMousemove:", "color: red", event);
 
-    },
-    captureFootageMousedown(event) {
-      console.log("%c captureFootageMousedown:", "color: red", event);
-      if (!this.pictureEditor.isDragging) {
-        return;
-      }
-      event.preventDefault();
-      event.stopPropagation();
-      // 滑鼠位置
-      var mouseX = parseInt(event.clientX - event.offsetX);
-      var mouseY = parseInt(event.clientY - event.offsetY);
-      // 滑鼠移動後和原本位置的距離
-      var dx = mouseX - this.pictureEditor.startX;
-      var dy = mouseY - this.pictureEditor.startY;
-      // update the starting drag position (== the current mouse position)
-      this.pictureEditor.startX = mouseX;
-      this.pictureEditor.startY = mouseY;
-      console.log("%c this.pictureEditor:", "color: red", this.pictureEditor);
-    },
 
 
     canvasLoadImage(imgElement) {
