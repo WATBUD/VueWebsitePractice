@@ -19,8 +19,7 @@ export const router = createRouter(
     { path: '/', component: DemoListUI }, 
     { path: '/PictureEditor', component: PictureEditor }, 
     { path: '/DemoListUI', component: DemoListUI }, 
-    { path: '/EmbedURL/:inputEmbedURL',name: 'EmbedURL',component: EmbedURL,param:true},
-    
+    { path: '/EmbedURL/:inputEmbedURL',name: 'EmbedURL',component: EmbedURL},
     { path: '/component_refactoring', component: component_refactoring },
     { path: '/pagination_store', component: pagination_store },
 

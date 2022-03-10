@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-show="OnEditing"
+      v-show="this.pictureEditor.OnEditing"
       id="AreaForEditingImageFiles"
       style="
       width: 100vw;
@@ -32,10 +32,12 @@
     overflow: hidden;"
         >
           <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"></canvas>
-
           <!-- <canvas id="CanvasMask" style="position: absolute;" width="500" height="500"></canvas> -->
           <div
             id="mask"
+            @mousemove="captureFootageMousemove"
+            @mousedown="captureFootageMousedown"
+            @mouseup="captureFootageMouseup"
             style="width: 250px;
     height: 250px;
     position: absolute;
@@ -54,8 +56,7 @@
         />
       </div>
       <button @click="saveClipCanvasImage">saveClipCanvasImage</button>
-      <button @click="this.OnEditing=false;">Cancel</button>
-
+      <button @click="this.pictureEditor.OnEditing=false;">Cancel</button>
     </div>
     <!-- Choose a profile picture: -->
     <label for="avatar">Update Image:</label>
@@ -73,9 +74,10 @@
     <div id="albums">
       <img
         @click="canvasLoadImage($event)"
-        v-for="album in albums"
-        :key="album.id"
-        :src="album"
+        v-for="(item,index) in pictureEditor.albums"
+        :key="item.id"
+        :src="item"
+        :index="'img_'+index"
         width="100"
         height="100"
         alt
@@ -87,7 +89,10 @@
     " id="canvas2" width="500" height="500"></canvas>-->
   </div>
 </template>
+
 <script>
+import { PictureEditor } from './PictureModule'
+//var pictureEditor=new PictureEditor();
 export default {
   name: "App",
   components: {},
@@ -98,11 +103,16 @@ export default {
       ages: [],
       languages: [],
       step: 1,
+      pictureEditor:new PictureEditor(),
       albums: [],
-      imageSize: 0,
-      OnEditing: false,
-      imageDataURL: undefined
+      imageSize: 1,
+      startX:0,
+      startY:0,
+      selectAlbumsIndex:0,
     };
+  },
+  beforeMount() {
+      //console.log("%c pictureEditor:", "color: red", this.pictureEditor);
   },
   computed: {
     currentStep({ step }) {
@@ -113,20 +123,17 @@ export default {
   },
   methods: {
     changeImageSize(event) {
-      console.log("%c changeImageSize:", "color: red", event,this.imageDataURL);
+      console.log("%c changeImageSize:", "color: red", event);
+      console.log("%c this.imageDataURL:", "color: blue", this.pictureEditor.imageDataURL);
       var canvas = document.getElementById("ImageFiles_canvas");
       var context = canvas.getContext("2d");
       //var dataURL = canvas.toDataURL();
-
-      // var src_img = new Image();
-      // src_img.src = this.imageDataURL;
-      if (this.imageDataURL == undefined) {
-        this.imageDataURL = canvas.toDataURL();
-      }
-
-      var load_img = new Image();
-      load_img.src = this.imageDataURL;
       var _this = this;
+      // if (_this.imageDataURL == undefined) {
+      // _this.imageDataURL = canvas.toDataURL();
+      // }
+      var load_img = new Image();
+      load_img.src = this.pictureEditor.imageDataURL;
       load_img.onload = function() {
         context.clearRect(0, 0, 500, 500);
         context.save();
@@ -135,42 +142,28 @@ export default {
         context.translate(-250, -250);
         //console.log("%c dataURL:", "color: red", load_img);
         context.drawImage(load_img, 0, 0, 500, 500);
-        //context.beginPath();
-        //context.scale(this.imageSize, 1);
         console.log("%c load_img.onload:", "color: red", _this.imageSize);
         context.restore();
-        // context.beginPath();
-        // context.strokeStyle = "rgb(255 255 255 / 50%)";
-        // context.lineWidth = 1;
-        // context.arc(250, 250, 125, 0, 2 * Math.PI);
-        // context.stroke();
-        // context.clip();
-        //context.drawImage(load_img, 0, 0, 500, 500);
-        //context.translate(500 * _this, 500 * _this);
-
-        //context.drawImage(load_img, 0, 0, (500 * _this), 500 * _this);
-
-        //context.drawImage(load_img, 0, 0, 50,50);
-        // oImgData = oCtx.getImageData(0, 0, nWidth, nHeight);
-        // oCtx.putImageData(oImgData, 0, 0);
       };
     },
     inputImage(event) {
       console.log("%c inputImage:", "color: red", event);
       console.log("%c inputImage:", "color: red", event.target.files);
-      console.log("%c this.OnEditing", "color: red",    this.OnEditing);  
-      this.OnEditing = true;
+      console.log("%c this.pictureEditor.OnEditing", "color: red", this.pictureEditor.OnEditing);
+      this.pictureEditor.OnEditing = true;
       //this.initialization(event.target.files[0]);
       var files_SRC = event.target.files[0];
-      this.albums.push(URL.createObjectURL(files_SRC));
-
-      // let searchIndex = this.albums.findIndex((x) => x == URL.createObjectURL(files_SRC));
+      this.pictureEditor.albums.push(URL.createObjectURL(files_SRC));
+      
+      // let searchIndex = this.pictureEditor.albums.findIndex((x) => x == URL.createObjectURL(files_SRC));
       // if(searchIndex=-1){
-      // this.albums.push(URL.createObjectURL(files_SRC));
+      // this.pictureEditor.albums.push(URL.createObjectURL(files_SRC));
       // }
       // else{
       //   retrun;
       // }
+      var _this = this;
+
       var img = new Image();
       //img.src = "https://dl.dropboxusercontent.com/s/1alt1303g9zpemd/UFBxY.png";
       img.src = URL.createObjectURL(files_SRC);
@@ -183,113 +176,96 @@ export default {
         console.dir(img);
         var canvas = document.getElementById("ImageFiles_canvas");
         var context = canvas.getContext("2d");
-        context.drawImage(img, 0, 0, 500, 500);
-        event.srcElement.value="";
-        const downloadLink = document.createElement('a')
-        downloadLink.href = URL.createObjectURL(files_SRC);
-        downloadLink.download = 'mycanvasimage.png'
-        downloadLink.click();
+        //context.drawImage(img, 0, 0, 500, 500);
+        event.srcElement.value = "";
+
+        // const downloadLink = document.createElement('a')
+        // var exportURL=canvas.toDataURL();
+        // var exportURL=URL.createObjectURL(files_SRC);
+        // downloadLink.href = exportURL;
+        // downloadLink.download = 'mycanvasimage.png'
+        // downloadLink.click();
         // var ele = document.getElementById(event.srcElement.id);
         // console.log("%c ele:", "color: red", ele);
         // ele.reset();
 
+        //context.clearRect(0, 0, 500, 500);
+        //context.save();
+        // context.translate(250, 250);
+        // context.scale(2, 2);
+        // context.translate(-250, -250);
 
-        //context.scale(1, 1);
-        //context.drawImage(img, 0, 0, 500, 500);
         // context.beginPath();
-        // context.strokeStyle = "rgb(255 255 255 / 50%)";
+        // context.arc(250, 250, 125, 0, 2 * Math.PI);
+        // context.strokeStyle = "rgb(255 255 255 / 100%)";
         // context.lineWidth = 1;
-        // context.arc(250, 250, 125, 0, 2 * Math.PI);
         // context.stroke();
         // context.clip();
-        // context.drawImage(img, 0, 0, 500, 500);
+        context.drawImage(img, 0, 0, 500, 500);
+        _this.pictureEditor.imageDataURL = canvas.toDataURL();
 
-
-        // canvas = document.getElementById("CanvasMask");
-        // context = canvas.getContext("2d");
-        // context.beginPath();
-        // context.strokeStyle = "rgb(22 22 22 / 50%)";
-        // context.arc(250, 250, 125, 0, 2 * Math.PI);
-        // context.lineWidth = 250;
-        // context.clip();
-        // context.stroke();
-        //context.drawImage(img, 0, 0, 500, 500);
-
-
-
-
-
-        // context.fillStyle = "rgb(22 22 22 / 50%)";
-        // context.fillRect(0, 0, canvas.width, canvas.height);
-        // context.globalCompositeOperation='source-over';
-        //context.closePath();
-        // context.fillStyle = "rgb(255 255 255 / 0%)";
-        // context.fill();
-        //context.fillStyle = 'red';
-        //context.fillRect(10, 10, 8, 20);
       };
     },
     saveClipCanvasImage() {
-    console.log("%c saveClipCanvasImage:", "color: blue");
-
-    var canvas = document.getElementById("ImageFiles_canvas");
-    var context = canvas.getContext("2d");
-    var load_img = new Image();
-      load_img.src = this.imageDataURL;
+      var canvas = document.getElementById("ImageFiles_canvas");
+      var context = canvas.getContext("2d");
+      var load_img = new Image();
+      load_img.src = this.pictureEditor.imageDataURL;
       var _this = this;
       load_img.onload = function() {
         context.clearRect(0, 0, 500, 500);
-        //context.save();
+        context.save();
         context.translate(250, 250);
         context.scale(_this.imageSize, _this.imageSize);
         context.translate(-250, -250);
         context.beginPath();
-        context.strokeStyle = "rgb(255 255 255 / 50%)";
-        context.lineWidth = 0;
-        context.arc(250, 250, 100, 0, 2 * Math.PI);
+        context.strokeStyle = "rgb(255 255 255 / 100%)";
+        context.lineWidth = 2;
+        context.arc(250, 250, 125 / _this.imageSize, 0, 2 * Math.PI);
         context.stroke();
         context.clip();
         context.drawImage(load_img, 0, 0, 500, 500);
-        //context.restore();
-        _this.imageDataURL=undefined;
+        var canvas = document.getElementById("img_0");
 
+        context.restore();
+        _this.pictureEditor.imageDataURL = undefined;
+        _this.imageSize = 1;
+        //_this.pictureEditor.OnEditing=false;
+      };
+    },
 
-    }
-    }
-    ,
+    captureFootageMouseup(event) {
+
+    },
+    captureFootageMousemove(event) {
+
+    },
+    captureFootageMousedown(event) {
+      if (!this.pictureEditor.isDragging) {
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      // 滑鼠位置
+      var mouseX = parseInt(event.clientX - event.offsetX);
+      var mouseY = parseInt(event.clientY - event.offsetY);
+      // 滑鼠移動後和原本位置的距離
+      var dx = mouseX - this.startX;
+      var dy = mouseY - this.startY;
+      // update the starting drag position (== the current mouse position)
+      this.startX = mouseX;
+      this.startY = mouseY;
+    },
 
 
     canvasLoadImage(imgElement) {
       // console.log('%c canvasLoadImage:', 'color: red',imgElement);
-      // console.log('%c canvasLoadImage:', 'color: red',this.albums);
-      // var img = new Image;
+      // console.log('%c canvasLoadImage:', 'color: red',this.pictureEditor.albums);
       // //img.src = "https://dl.dropboxusercontent.com/s/1alt1303g9zpemd/UFBxY.png";
-      // img.src =imgElement.srcElement.src;
-      // img.onload = function(){
-      // var canvas = document.getElementById('canvas');
-      // var context = canvas.getContext('2d');
-      // context.drawImage(img, 0, 0,500,500);
-      // this.OnEditing=true;
-      // canvas = document.getElementById('canvas2');
-      // context = canvas.getContext('2d');
-      // context.beginPath();
-      // context.strokeStyle = 'red';
-      // context.arc(250,250,40,0,2*Math.PI);
-      // context.stroke();
-      // context.clip();
-      // context.drawImage(img, 0, 0,500,500);
-      //}
     },
 
     reloadPage() {},
-    initialization(src) {
-      // context.beginPath();
-      // context.lineWidth = 10;
-      // context.strokeStyle = 'red';
-      // context.arc(75,75,40,15,0.25*Math.PI);
-      // context.stroke();
-      //img.onload = draw;
-    }
+    initialization(src) {}
   }
 };
 </script>
@@ -300,6 +276,8 @@ export default {
   width: 500px;
   height: 500px;
   border: 1px solid rgb(255 0 0);
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .container {
