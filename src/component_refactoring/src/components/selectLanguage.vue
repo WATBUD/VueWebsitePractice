@@ -5,11 +5,11 @@
         <label for="english">
           <input
             type="checkbox"
-            id="english"
-            value="English"
+            id="Latin"
+            value="Latin"
             v-model="languages"
           />
-          English
+          Latin
         </label>
         <label for="chinese">
           <input
