@@ -17,6 +17,7 @@
     <label class="toggleBtn" for="toggleTools">Homemade Tools</label>
     <ul>
     <li><router-link to="/PictureEditor">PictureEditor</router-link></li>
+    <li><router-link to="/PictureEditor_Div">PictureEditor_Div</router-link></li>
     </ul>
   </div>
 

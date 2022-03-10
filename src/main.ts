@@ -10,6 +10,7 @@ import EmbedURL from './EmbedURL.vue'
 import component_refactoring from './component_refactoring/src/App.vue'
 import pagination_store from './pagination_store/src/App.vue'
 import PictureEditor from './CanvasPractice/PictureEditor.vue'
+import PictureEditor_Div from './CanvasPractice/PictureEditor_Div.vue'
 
 export const router = createRouter(
 {
@@ -18,6 +19,7 @@ export const router = createRouter(
     // { path:'/:catchAll(.*)',redirect: '/'},
     { path: '/', component: DemoListUI }, 
     { path: '/PictureEditor', component: PictureEditor }, 
+    { path: '/PictureEditor_Div', component: PictureEditor_Div }, 
     { path: '/DemoListUI', component: DemoListUI }, 
     { path: '/EmbedURL/:inputEmbedURL',name: 'EmbedURL',component: EmbedURL},
     { path: '/component_refactoring', component: component_refactoring },

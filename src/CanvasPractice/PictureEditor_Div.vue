@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import { PictureDivModule } from './PictureModule_Div'
+import { PictureEditor } from './PictureModule_Div'
 //var pictureEditor=new PictureEditor();
 export default {
   name: "App",
