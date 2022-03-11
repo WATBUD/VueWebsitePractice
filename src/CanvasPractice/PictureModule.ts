@@ -8,7 +8,7 @@ export class PictureEditor {
     isDragging = false;
     startX = 0;
     startY = 0;
-    finalX = 0;
+    finalCoordinates=[0,0];
     lastCaptureCoordinates=[0,0];
     selectAlbumsIndex = 0;
     footageEvent:any=[];
@@ -132,8 +132,6 @@ export class PictureEditor {
         };
     }
 
-
-
     canvasTranslate(X:any,Y:any) {
         //console.log("%c canvasTranslate:", "color: red", event);
         // console.log("%c this.imageDataURL:", "color: blue", this.imageDataURL);
@@ -145,10 +143,16 @@ export class PictureEditor {
         load_img.onload = function () {
             context.clearRect(0, 0, 500, 500);
             context.save();
-            context.translate(250, 250);+
+            context.translate(250, 250);
             context.scale(_this.imageSize, _this.imageSize);
             context.translate(-250, -250);
-            context.drawImage(load_img, X, Y, 500, 500);
+            //this.lastCaptureCoordinates
+
+            // const A=Math.abs(X-_this.finalCoordinates[0]);
+            // const B=Math.abs(Y-_this.finalCoordinates[1]);
+            context.drawImage(load_img, X-_this.finalCoordinates[0], Y-_this.finalCoordinates[0], 500, 500);
+            // _this.finalCoordinates[0]=A;
+            // _this.finalCoordinates[1]=B;
             context.restore();
         };
     }
@@ -170,6 +174,8 @@ export class PictureEditor {
     captureFootageMouseup(event: MouseEvent) {
         console.log("%c captureFootageMouseup:", "color: red", event);
         this.isDragging=false;
+        //this.finalCoordinates[0]=this.lastCaptureCoordinates[0];
+        //this.finalCoordinates[1]=this.lastCaptureCoordinates[1];
 
     }
     captureFootageMousemove(event: MouseEvent) {
