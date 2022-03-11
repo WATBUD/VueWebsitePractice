@@ -53,7 +53,6 @@ export class PictureEditor {
         // }
         const _this = this;
         const element_Image = <HTMLImageElement>document.getElementById("Element_Image");
-        //const img = new Image();
         element_Image.src = URL.createObjectURL(files_SRC);
         element_Image.onload = function () {
             const width = element_Image.naturalWidth;
@@ -82,30 +81,30 @@ export class PictureEditor {
     saveClipCanvasImage() {
         const canvas = <HTMLCanvasElement>document.getElementById("ImageFiles_canvas");
         const context: any = canvas.getContext("2d");
-        const load_img = new Image();
-        load_img.src = this.imageDataURL;
         const _this = this;
-        load_img.onload = function () {
-            context.clearRect(0, 0, 500, 500);
-            context.save();
-            context.translate(250, 250);
-            context.scale(_this.imageSize, _this.imageSize);
-            context.translate(-250, -250);
-            context.beginPath();
-            context.strokeStyle = "rgb(255 255 255 / 100%)";
-            context.lineWidth = 2;
-            context.arc(250, 250, 125 / _this.imageSize, 0, 2 * Math.PI);
-            context.stroke();
-            context.clip();
-            context.drawImage(load_img, _this.lastCaptureCoordinates[0], _this.lastCaptureCoordinates[1], 500, 500);
-            context.restore();
-            console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
-            const album_img =<HTMLImageElement>document.getElementById("img_"+_this.selectAlbumsIndex);
-            album_img.src=canvas.toDataURL();
-            _this.imageDataURL = undefined;
-            _this.imageSize = 1;
-            //_this.onEditing=false;
-        };
+        const load_img = <HTMLImageElement>document.getElementById("Element_Image");
+        context.clearRect(0, 0, 500, 500);
+        context.save();
+        context.translate(250, 250);
+        context.scale(_this.imageSize, _this.imageSize);
+        context.translate(-250, -250);
+        //---Circle--//
+        context.beginPath();
+        context.strokeStyle = "rgb(255 255 255 / 100%)";
+        context.lineWidth = 2;
+        context.arc(250, 250, 125 / _this.imageSize, 0, 2 * Math.PI);
+        context.stroke();
+        context.clip();
+        context.drawImage(load_img, _this.lastCaptureCoordinates[0], _this.lastCaptureCoordinates[1], 500, 500);
+        context.restore();
+        console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
+        const album_img = <HTMLImageElement>document.getElementById("img_" + _this.selectAlbumsIndex);
+        album_img.src = canvas.toDataURL();
+        _this.imageDataURL = undefined;
+        _this.imageSize = 1;
+        load_img.style.transform ="scale(1, 1)";
+
+        //_this.onEditing=false;
     }
 
     canvasTranslate(X:any,Y:any) {
