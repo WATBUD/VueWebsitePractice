@@ -10,32 +10,38 @@
       position: absolute;
       display: flex;
       align-items: center;
-      justify-content: center;
-  "
-    >
+      justify-content: center;">
       <div
         id="ImageFiles"
         style="background: rgb(30 30 30);
           width: 50%;
           height: 80%;
           display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-          "
-      >
-        <div
+          align-items: center;
+          justify-content: center;
+          flex-flow: column;
+          ">
+      <div
           id="CenterArea"
-          style="width: 500px;height: 500px;position: relative;    border: 1px solid rgb(255, 255, 255);    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;"
+          style="width: 500px;height: 500px;position: relative;    
+          border: 1px solid rgb(255, 255, 255);    
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;"
         >
           <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"
+          ></canvas>
+
+          <img
+            id="Element_Image"
+            @click="canvasLoadImage($event)"
             @mousemove="pictureEditor.captureFootageMousemove"
             @mousedown="pictureEditor.captureFootageMousedown"
-          ></canvas>
-          <!-- <canvas id="CanvasMask" style="position: absolute;" width="500" height="500"></canvas> -->
+            width="500"
+            height="500"
+            alt=""
+          />
           <div
             id="mask"
             style="width: 250px;
@@ -92,7 +98,7 @@
 </template>
 
 <script>
-import { PictureEditor } from './PictureModule_Div'
+import { PictureEditor } from "./PictureModule_Div";
 //var pictureEditor=new PictureEditor();
 export default {
   name: "App",
@@ -101,22 +107,17 @@ export default {
   created() {},
   data: function() {
     return {
-      pictureEditor:new PictureEditor(),
+      pictureEditor: new PictureEditor(),
       albums: [],
-      startX:0,
-      startY:0,
+      startX: 0,
+      startY: 0
     };
   },
   beforeMount() {
-      //console.log("%c pictureEditor:", "color: red", this.pictureEditor);
+    //console.log("%c pictureEditor:", "color: red", this.pictureEditor);
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
-
-
-
     canvasLoadImage(imgElement) {
       // console.log('%c canvasLoadImage:', 'color: red',imgElement);
       // console.log('%c canvasLoadImage:', 'color: red',this.pictureEditor.albums);
