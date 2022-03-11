@@ -72,6 +72,9 @@ export class PictureEditor {
             const context: any = canvas.getContext("2d");
             context.drawImage(img, 0, 0, 500, 500);
             event.srcElement.value = "";
+            // context.onmousedown = handleMouseDown;
+            // context.onmousemove = handleMouseMove;
+            // context.onmouseup = handleMouseUp;
 
             // const downloadLink = document.createElement('a')
             // var exportURL=canvas.toDataURL();

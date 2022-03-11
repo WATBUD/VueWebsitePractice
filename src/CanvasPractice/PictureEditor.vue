@@ -102,9 +102,6 @@ export default {
   data: function() {
     return {
       pictureEditor:new PictureEditor(),
-      albums: [],
-      startX:0,
-      startY:0,
     };
   },
   beforeMount() {

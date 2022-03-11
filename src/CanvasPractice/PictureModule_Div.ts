@@ -129,8 +129,6 @@ export class PictureEditor {
         };
     }
 
-
-
     canvasTranslate(X:any,Y:any) {
         //console.log("%c canvasTranslate:", "color: red", event);
         // console.log("%c this.imageDataURL:", "color: blue", this.imageDataURL);
