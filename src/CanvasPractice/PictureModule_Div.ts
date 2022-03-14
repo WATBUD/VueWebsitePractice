@@ -63,6 +63,7 @@ export class PictureEditor {
             console.dir(element_Image);
             event.srcElement.value = "";
             element_Image.style.transform ="scale(1, 1)";
+            console.log("%c this.getBoundingClientRect:", "color: yellow", element_Image.getBoundingClientRect());
             // const downloadLink = document.createElement('a')
             // var exportURL=canvas.toDataURL();
             // var exportURL=URL.createObjectURL(files_SRC);
@@ -83,6 +84,8 @@ export class PictureEditor {
         const context: any = canvas.getContext("2d");
         const _this = this;
         const load_img = <HTMLImageElement>document.getElementById("Element_Image");
+        const  dx = load_img.offsetLeft;
+        const  dy = load_img.offsetTop;
         context.clearRect(0, 0, 500, 500);
         context.save();
         context.translate(250, 250);
@@ -91,11 +94,13 @@ export class PictureEditor {
         //---Circle--//
         context.beginPath();
         context.strokeStyle = "rgb(255 255 255 / 100%)";
-        context.lineWidth = 2;
+        context.lineWidth = 1;
+        //context.translate(250-dx, 250-dy);
+        
         context.arc(250, 250, 125 / _this.imageSize, 0, 2 * Math.PI);
         context.stroke();
         context.clip();
-        context.drawImage(load_img, _this.lastCaptureCoordinates[0], _this.lastCaptureCoordinates[1], 500, 500);
+        context.drawImage(load_img, dx/_this.imageSize, dy/_this.imageSize, 500, 500);
         context.restore();
         console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
         const album_img = <HTMLImageElement>document.getElementById("img_" + _this.selectAlbumsIndex);
@@ -103,18 +108,22 @@ export class PictureEditor {
         _this.imageDataURL = undefined;
         _this.imageSize = 1;
         load_img.style.transform ="scale(1, 1)";
+        load_img.style.marginLeft=0+'px';
+        load_img.style.marginTop= 0+'px';
 
         //_this.onEditing=false;
     }
 
     canvasTranslate(X:any,Y:any) {
-        //console.log("%c canvasTranslate:", "color: red", event);
         // console.log("%c this.imageDataURL:", "color: blue", this.imageDataURL);
-        const element_Image = <HTMLImageElement>document.getElementById("Element_Image");
-        console.log("%c this.canvasTranslate:", "color: blue", element_Image);
-        //element_Image.gerrfsfsfs
-
-
+        const element_Image =<HTMLImageElement>document.getElementById("Element_Image");
+        console.log("%c this.canvasTranslate:", "color: blue", element_Image.offsetLeft,X,Y);
+        //console.log("%c this.canvasTranslate:", "color: blue", element_Image.getBoundingClientRect());
+        //console.log("%c this.element_Image:", "color: blue", element_Image);
+        const  dx = element_Image.offsetLeft;
+        const  dy = element_Image.offsetTop;
+        element_Image.style.marginLeft=(dx+X)+'px';
+        element_Image.style.marginTop= (dy+Y)+'px';
         // const canvas = <HTMLCanvasElement>document.getElementById("ImageFiles_canvas");
         // const context: any = canvas.getContext("2d");
         // const _this = this;
@@ -130,6 +139,14 @@ export class PictureEditor {
         //     context.restore();
         // };
     }
+    getOffset(el:any) {
+        const rect = el.getBoundingClientRect();
+        return {
+          left: rect.left + window.scrollX,
+          top: rect.top + window.scrollY
+        };
+    }
+
 
     captureFootageMousedown(event: MouseEvent) {
         console.log("%c captureFootageMousedown:", "color: red", event);
@@ -154,13 +171,23 @@ export class PictureEditor {
         if (!this.isDragging) {
            return;
         }
-        event.preventDefault();
-        event.stopPropagation();
+        //<HTMLImageElement>
+        const element_Image:any = <HTMLImageElement>document.getElementById("Element_Image");
+        // event.preventDefault();
+        // event.stopPropagation();
         // 滑鼠移動後和原本位置的距離
+
+
+        // console.log("%c element_Image.getBoundingClientRect():", "color: red", element_Image.getBoundingClientRect());
+        // console.log("%c element_Image.offsetLeft():", "color: red", element_Image.offsetLeft);
+        // console.log("%c element_Image.offsetTop():", "color: red", element_Image.offsetTop);
+        console.log("%c event.offsetX:", "color: red", event.offsetX);
+        console.log("%c event.offsetY:", "color: red", event.offsetY);
+        console.log("%c event:", "color: red", event);
         const  dx = event.offsetX - this.startX;
         const  dy = event.offsetY - this.startY;
-        this.lastCaptureCoordinates[0]=dx*this.imageSize;
-        this.lastCaptureCoordinates[1]=dy*this.imageSize;
+        this.lastCaptureCoordinates[0]=dx;
+        this.lastCaptureCoordinates[1]=dy;//*this.imageSize
         // update the starting drag position (== the current mouse position)
         this.canvasTranslate(this.lastCaptureCoordinates[0],this.lastCaptureCoordinates[1]);
         //console.log("%c captureFootageMousemove:", "color: red", event);

@@ -29,6 +29,7 @@
           justify-content: center;
           align-items: center;
           overflow: hidden;"
+          
         >
           <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"
           ></canvas>
@@ -36,11 +37,12 @@
           <img
             id="Element_Image"
             @click="canvasLoadImage($event)"
-            @mousemove="pictureEditor.captureFootageMousemove"
-            @mousedown="pictureEditor.captureFootageMousedown"
             width="500"
             height="500"
             alt=""
+            
+          @mousemove="pictureEditor.captureFootageMousemove"
+          @mousedown="pictureEditor.captureFootageMousedown"
           />
           <div
             id="mask"
@@ -85,8 +87,8 @@
         :src="item"
         :index="'img_'+index"
         :id="'img_'+index"
-        width="100"
-        height="100"
+        width="500"
+        height="500"
         alt
       />
     </div>
