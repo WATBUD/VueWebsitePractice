@@ -62,7 +62,7 @@ export class PictureEditor {
         // else{
         //   retrun;
         // }
-        const _this = this;
+        const _TS = this;
         const element_Image = <HTMLImageElement>document.getElementById("Element_Image");
         element_Image.src = files_SRC;
         element_Image.onload = function () {
@@ -77,8 +77,8 @@ export class PictureEditor {
             const context: any = canvas.getContext("2d");
             context.drawImage(element_Image, 0, 0, 500, 500);
 
-            console.log("%c  this.albums:", "color: yellow",  _this.albums);
-            console.log("%c  this.selectAlbumsIndex:", "color: yellow",  _this.selectAlbumsIndex);
+            console.log("%c  this.albums:", "color: yellow",  _TS.albums);
+            console.log("%c  this.selectAlbumsIndex:", "color: yellow",  _TS.selectAlbumsIndex);
             console.log("%c this.getBoundingClientRect:", "color: yellow", element_Image.getBoundingClientRect());
             // const downloadLink = document.createElement('a')
             // var exportURL=canvas.toDataURL();
@@ -89,14 +89,14 @@ export class PictureEditor {
             // var ele = document.getElementById(event.srcElement.id);
             // console.log("%c ele:", "color: red", ele);
             // ele.reset();
-            //_this.imageDataURL = canvas.toDataURL();
+            //_TS.imageDataURL = canvas.toDataURL();
 
         };
     }
 
     saveClipCanvasImage() {
         const canvas = <HTMLCanvasElement>document.getElementById("ImageFiles_canvas");
-        const _this = this;
+        const _TS = this;
         const element_Image = <HTMLImageElement>document.getElementById("Element_Image");
         const mask = <HTMLImageElement>document.getElementById("mask");
         const previous_XY= [mask.offsetLeft,mask.offsetTop];
@@ -105,7 +105,7 @@ export class PictureEditor {
 
 
         //---Circle--//
-        console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
+        console.log("%c _TS.selectAlbumsIndex:", "color: blue", _TS.selectAlbumsIndex);
         const load_img = new Image();
         load_img.src = canvas.toDataURL();
         load_img.onload = function () {
@@ -130,19 +130,20 @@ export class PictureEditor {
             originImage.onload = function () {
                 context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
                 context.drawImage(originImage,acr_xy[0]-125,acr_xy[1]-125,250,250,0,0,500,500);
-                const album_img = <HTMLImageElement>document.getElementById("img_" + _this.selectAlbumsIndex);
-                album_img.src = canvas.toDataURL();
+                //const album_img = <HTMLImageElement>document.getElementById("img_" + _TS.selectAlbumsIndex);
+                //album_img.src = canvas.toDataURL();
+                _TS.albums[_TS.selectAlbumsIndex]=canvas.toDataURL();
             }            //context.restore();
 
-            //console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
+            //console.log("%c _TS.selectAlbumsIndex:", "color: blue", _TS.selectAlbumsIndex);
             context.restore();
             
-            _this.imageDataURL = undefined;
-            _this.imageSize = 1;
+            _TS.imageDataURL = undefined;
+            _TS.imageSize = 1;
             element_Image.style.transform ="scale(1, 1)";
             element_Image.style.marginLeft=0+'px';
             element_Image.style.marginTop= 0+'px';
-            _this.onEditing=false;
+            _TS.onEditing=false;
         }
 
     }
