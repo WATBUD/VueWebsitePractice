@@ -35,9 +35,6 @@ export class PictureEditor {
         context.drawImage(element_Image, 0, 0, 500, 500);
         context.restore();
         //context.globalCompositeOperation='destination-in';
-
-
-
         // context.beginPath();
         // context.strokeStyle = "rgb(255 255 255 / 100%)";
         // context.lineWidth = 1;
@@ -46,10 +43,6 @@ export class PictureEditor {
         // context.clip();
         // context.stroke();
         //context.drawImage(element_Image, 0, 0, 500, 500);
-
-
-
-
         //context.restore();
     }
     inputImage(event: any) {
@@ -82,15 +75,6 @@ export class PictureEditor {
             event.srcElement.value = "";
             element_Image.style.transform ="scale(1, 1)";
             const context: any = canvas.getContext("2d");
-
-            //context.save()
-            //context.setTransform(1, 0, 0, 1, 0, 0)
-            //context.clearRect(0, 0, canvas.width, canvas.height);
-            //context.restore()
-
-            //context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-            // context.restore();
-            // context.save();
             context.drawImage(element_Image, 0, 0, 500, 500);
 
             console.log("%c  this.albums:", "color: yellow",  _this.albums);
@@ -105,15 +89,7 @@ export class PictureEditor {
             // var ele = document.getElementById(event.srcElement.id);
             // console.log("%c ele:", "color: red", ele);
             // ele.reset();
-
             //_this.imageDataURL = canvas.toDataURL();
-
-
-            // context.beginPath();
-            // context.strokeStyle = "rgb(255 255 255 / 100%)";
-            // context.lineWidth = 10;
-            // context.arc(250, 250, 125 , 0, 2 * Math.PI);
-            // context.stroke();
 
         };
     }
@@ -160,15 +136,15 @@ export class PictureEditor {
 
             //console.log("%c _this.selectAlbumsIndex:", "color: blue", _this.selectAlbumsIndex);
             context.restore();
-
+            
             _this.imageDataURL = undefined;
             _this.imageSize = 1;
             element_Image.style.transform ="scale(1, 1)";
             element_Image.style.marginLeft=0+'px';
             element_Image.style.marginTop= 0+'px';
+            _this.onEditing=false;
         }
 
-        //_this.onEditing=false;
     }
 
     getOffset(el:any) {
@@ -178,7 +154,6 @@ export class PictureEditor {
           top: rect.top + window.scrollY
         };
     }
-
 
     captureFootageMousedown(event: MouseEvent) {
         const page_XY= [event.pageX,event.pageY];
@@ -192,7 +167,6 @@ export class PictureEditor {
         event.preventDefault();
         event.stopPropagation();
         // update the starting drag position (== the current mouse position)
-
         //console.log("%c this:", "color: red", this);
     }
 
@@ -209,11 +183,7 @@ export class PictureEditor {
         }
         event.preventDefault();
         event.stopPropagation();
-        //<HTMLImageElement>
         const element_mask:any = document.getElementById("mask");
-        // event.preventDefault();
-        // event.stopPropagation();
-        // 滑鼠移動後和原本位置的距離
         console.log("%c mask.getBoundingClientRect():", "color: red", element_mask.getBoundingClientRect());
         // console.log("%c mask.offsetLeft():", "color: red", mask.offsetLeft);
         // console.log("%c mask.offsetTop():", "color: red", mask.offsetTop);
@@ -235,14 +205,7 @@ export class PictureEditor {
         if(result[1]>=maxBound[0]&&result[1]<=maxBound[1]){
             element_mask.style.marginTop= (result[1])+'px';
         }
-        // element_mask.style.marginLeft=(result[0])+'px';
-
-        // element_mask.style.marginTop= (result[1])+'px';
-
-        //element_mask.style.marginLeft
         console.log("%c this.result:", "color: blue",result);
-        //console.log("%c this.canvasTranslate:", "color: blue", element_Image.getBoundingClientRect());
-        //console.log("%c this.element_Image:", "color: blue", element_Image);
         //console.log("%c captureFootageMousemove:", "color: red", event);
     }
 }
