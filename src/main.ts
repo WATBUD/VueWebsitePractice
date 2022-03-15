@@ -11,6 +11,7 @@ import component_refactoring from './component_refactoring/src/App.vue'
 import pagination_store from './pagination_store/src/App.vue'
 import PictureEditor from './CanvasPractice/PictureEditor.vue'
 import PictureEditor_Div from './CanvasPractice/PictureEditor_Div.vue'
+import PictureEditor_DragCircle from './CanvasPractice/PictureEditor_DragCircle.vue'
 
 export const router = createRouter(
 {
@@ -20,6 +21,7 @@ export const router = createRouter(
     { path: '/', component: DemoListUI }, 
     { path: '/PictureEditor', component: PictureEditor }, 
     { path: '/PictureEditor_Div', component: PictureEditor_Div }, 
+    { path: '/PictureEditor_DragCircle', component: PictureEditor_DragCircle }, 
     { path: '/DemoListUI', component: DemoListUI }, 
     { path: '/EmbedURL/:inputEmbedURL',name: 'EmbedURL',component: EmbedURL},
     { path: '/component_refactoring', component: component_refactoring },

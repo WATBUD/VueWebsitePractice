@@ -18,6 +18,7 @@
     <ul>
     <li><router-link to="/PictureEditor">PictureEditor</router-link></li>
     <li><router-link to="/PictureEditor_Div">PictureEditor_Div</router-link></li>
+    <li><router-link to="/PictureEditor_DragCircle">PictureEditor_DragCircle</router-link></li>
     </ul>
   </div>
 
