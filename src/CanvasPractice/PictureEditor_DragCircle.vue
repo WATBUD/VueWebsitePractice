@@ -40,7 +40,7 @@
             @click="canvasLoadImage($event)"
             width="500"
             height="500"
-            alt=""
+            alt
           />
           <div
             id="mask"
