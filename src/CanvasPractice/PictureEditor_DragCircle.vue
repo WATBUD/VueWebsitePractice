@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div
       v-show="this.pictureEditor.onEditing"
       id="AreaForEditingImageFiles"
@@ -40,7 +40,7 @@
             @click="canvasLoadImage($event)"
             width="500"
             height="500"
-            alt
+            alt=""
           />
           <div
             id="mask"
@@ -91,11 +91,8 @@
         alt
       />
     </div>
-    <!-- <canvas style="position: absolute;
-      left: 1040px;
-      top: 23px;
-    " id="canvas2" width="500" height="500"></canvas>-->
-  </div>
+
+  </section>
 </template>
 
 <script>

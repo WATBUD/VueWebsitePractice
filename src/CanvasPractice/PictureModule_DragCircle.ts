@@ -110,9 +110,11 @@ export class PictureEditor {
         load_img.src = canvas.toDataURL();
         load_img.onload = function () {
             const context: any = canvas.getContext("2d");
+            console.log("%c  canvas.clientWidth:", "color: blue", canvas.clientWidth);
+            console.log("%c canvas.clientHeight:", "color: blue", canvas.clientHeight);
+            context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
             context.save();
             //context.drawImage(load_img,0,0, 500, 500);
-            context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
             context.beginPath();
             context.strokeStyle = "rgb(255 255 255 / 100%)";
             context.lineWidth = 1;
@@ -123,17 +125,24 @@ export class PictureEditor {
             context.drawImage(load_img,0,0, 500, 500);
             context.restore();
 
-            //context.drawImage(load_img,acr_xy[0]-125,acr_xy[1]-125,250,250,0,0,500,500);
-            //const oldUrl = canvas.toDataURL();
             const originImage = new Image();
             originImage.src = canvas.toDataURL();
+            context.clearRect(0, 0, 500, 500);
+
             originImage.onload = function () {
-                context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+                console.dir("canvas:", canvas);
+                console.log("%c canvas.clientWidth:", "color: blue", canvas.clientWidth);
+                console.log("%c canvas.clientHeight:", "color: blue", canvas.clientHeight);
+
                 context.drawImage(originImage,acr_xy[0]-125,acr_xy[1]-125,250,250,0,0,500,500);
-                //const album_img = <HTMLImageElement>document.getElementById("img_" + _TS.selectAlbumsIndex);
-                //album_img.src = canvas.toDataURL();
+                const album_img = <HTMLImageElement>document.getElementById("img_" + _TS.selectAlbumsIndex);
+                album_img.src = canvas.toDataURL();
+                // const imageData = context.getImageData(acr_xy[0]-125,acr_xy[1]-125,250,250);
+                // console.log("%c imageData:", "color: blue", imageData);
+                // context.putImageData(imageData, 0, 0);
+    
                 _TS.albums[_TS.selectAlbumsIndex]=canvas.toDataURL();
-            }            //context.restore();
+            }            
 
             //console.log("%c _TS.selectAlbumsIndex:", "color: blue", _TS.selectAlbumsIndex);
             context.restore();

@@ -1,5 +1,17 @@
 <template>
-<div id="main">
+<section id="main">
+  <div
+      v-show="this.onLoading"
+      id="onLoadingMask"
+      style="user-select: none;
+    width: 100%;
+    height: 100%;
+    background: rgb(9 9 9 / 68%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;"> 
+  </div>
   <div class="container">
     <h1>Teachers</h1>
     <ul>
@@ -38,7 +50,7 @@
     </div>
     
   </div>
-  </div>
+</section>
 </template>
 
 <script>
@@ -54,6 +66,7 @@ export default {
       teachers: [],
       paginationNumber:1,
       selectedTeacherId: 0,
+      onLoading:false,
     };
   },
   beforeMount() {
