@@ -3,13 +3,14 @@
   <div class="container">
     <h1>Teachers</h1>
     <ul>
-      <li v-for="teacher in teachers" :key="teacher.id">
+      <li v-for="teacher in teachers" :key="teacher.id"
+          v-show="teacher.id==paginationNumber*3 |teacher.id==(paginationNumber*3-1)|teacher.id==(paginationNumber*3-2)">
         {{ teacher.id }} | {{ teacher.name }}
         <a
           :href="`#${anchorTeacherPrefix}${teacher.id}`"
           @click="seeMore(teacher.id)"
         >
-          see more
+        see more
         </a>
       </li>
     </ul>
@@ -52,6 +53,7 @@ export default {
     // TODO: focus to design teacher pagination state
     return {
       teachers: [],
+      paginationNumber:1,
       selectedTeacherId: 0,
     };
   },
@@ -77,10 +79,16 @@ export default {
       });
     },
     onNext() {
-      // TODO: go to next page
+      var calculateValue=this.paginationNumber+1;
+      if(calculateValue*3<this.teachers.length){
+      this.paginationNumber=calculateValue;
+      }
     },
     onPrev() {
-      // TODO: go to prev page
+      var calculateValue=this.paginationNumber-1;
+      if(calculateValue>=1){
+      this.paginationNumber=calculateValue;
+      }
     },
     seeMore(id) {
       this.selectedTeacherId = id;
