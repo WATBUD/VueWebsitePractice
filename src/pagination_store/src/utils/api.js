@@ -4,7 +4,10 @@ const TIMEOUT_ERROR_TIME = 6000;
 
 export function fetchTeachers({ page, size } = {}) {
   const delayTime =
-    (Math.floor(Math.random() * MAX_NUMBER) + MIN_NUMBER) * 1000;
+    (Math.floor(Math.random() * MAX_NUMBER) + MIN_NUMBER) * 200;
+    console.log('%c page', 'background: blue; color: red',page);
+    console.log('%c size', 'background: blue; color: red',size);
+
   return new Promise((resolve, reject) => {
     if (delayTime >= TIMEOUT_ERROR_TIME) {
       reject("API timeout error");

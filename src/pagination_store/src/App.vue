@@ -3,8 +3,7 @@
   <div class="container">
     <h1>Teachers</h1>
     <ul>
-      <li v-for="teacher in teachers" :key="teacher.id"
-          v-show="teacher.id==paginationNumber*3 |teacher.id==(paginationNumber*3-1)|teacher.id==(paginationNumber*3-2)">
+      <li v-for="teacher in teachers" :key="teacher.id">
         {{ teacher.id }} | {{ teacher.name }}
         <a
           :href="`#${anchorTeacherPrefix}${teacher.id}`"
@@ -58,7 +57,7 @@ export default {
     };
   },
   beforeMount() {
-    this.fetchTeachers();
+    this.fetchTeachers(1);
     this.selectedTeacherId = helper.getTeacherIdAnchor();
   },
   computed: {
@@ -72,22 +71,24 @@ export default {
     },
   },
   methods: {
-    fetchTeachers() {
+    fetchTeachers(_page=1) {
       // TODO: fetch teacher pagination data
-      apiClient.fetchTeachers().then((teachers) => {
+      apiClient.fetchTeachers({page:_page,size:3}).then((teachers) => {
         this.teachers = teachers;
       });
     },
     onNext() {
       var calculateValue=this.paginationNumber+1;
-      if(calculateValue*3<this.teachers.length){
+      if(calculateValue*3<=15){
       this.paginationNumber=calculateValue;
+      this.fetchTeachers(this.paginationNumber);
       }
     },
     onPrev() {
       var calculateValue=this.paginationNumber-1;
       if(calculateValue>=1){
       this.paginationNumber=calculateValue;
+      this.fetchTeachers(this.paginationNumber);
       }
     },
     seeMore(id) {
