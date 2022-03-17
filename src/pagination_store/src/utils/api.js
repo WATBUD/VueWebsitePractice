@@ -5,8 +5,7 @@ const TIMEOUT_ERROR_TIME = 6000;
 export function fetchTeachers({ page, size } = {}) {
   const delayTime =
     (Math.floor(Math.random() * MAX_NUMBER) + MIN_NUMBER) * 200;
-    console.log('%c page', 'background: blue; color: red',page);
-    console.log('%c size', 'background: blue; color: red',size);
+
 
   return new Promise((resolve, reject) => {
     if (delayTime >= TIMEOUT_ERROR_TIME) {
@@ -41,9 +40,11 @@ function getMockTeachers({ page, size } = {}) {
     { id: 13, name: "Ben", speakLanguages: ["english", "italian"] },
     { id: 14, name: "Dean", speakLanguages: ["italian", "korean"] },
   ];
-
-  if (!page) return mockApiResponse;
+  console.log('%c page', 'background: red; color: white',page);
+  console.log('%c size', 'background: red; color: white',size);
+  console.log('%c !page', 'background: white; color: red',!page);
   if (page < 1) return [];
+  //console.log('%c page < 1', 'background: white; color: red');
 
   const offset = (page - 1) * size;
   return mockApiResponse.slice(offset, offset + size);

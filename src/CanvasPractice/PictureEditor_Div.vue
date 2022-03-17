@@ -10,7 +10,9 @@
       position: absolute;
       display: flex;
       align-items: center;
-      justify-content: center;">
+      justify-content: center;"
+      @mousemove="pictureEditor.captureFootageMousemove"
+>
       <div
         id="ImageFiles"
         style="background: rgb(30 30 30);
@@ -29,7 +31,7 @@
           justify-content: center;
           align-items: center;
           overflow: hidden;"
-          
+          @mousedown="pictureEditor.captureFootageMousedown"
         >
           <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"
           ></canvas>
@@ -41,8 +43,6 @@
             height="500"
             alt=""
             
-          @mousemove="pictureEditor.captureFootageMousemove"
-          @mousedown="pictureEditor.captureFootageMousedown"
           />
           <div
             id="mask"

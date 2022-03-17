@@ -10,7 +10,9 @@
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;"> 
+    justify-content: center;
+    background: url(./Image/Share/Loading.gif);"
+    > 
   </div>
   <div class="container">
     <h1>Teachers</h1>
@@ -57,6 +59,7 @@
 import * as apiClient from "./utils/api";
 import * as helper from "./utils/helper";
 import { anchorTeacherPrefix } from "./utils/constant";
+import { createWebHashHistory } from 'vue-router';
 
 export default {
   name: "App",
@@ -66,11 +69,16 @@ export default {
       teachers: [],
       paginationNumber:1,
       selectedTeacherId: 0,
-      onLoading:false,
+      onLoading:true,
     };
   },
   beforeMount() {
-    this.fetchTeachers(1);
+    apiClient.fetchTeachers({page:this.paginationNumber,size:3}).then((data) => {
+        if(data.length>0){
+        this.teachers = data;
+        }
+        this.onLoading=false;
+    });
     this.selectedTeacherId = helper.getTeacherIdAnchor();
   },
   computed: {
@@ -84,25 +92,33 @@ export default {
     },
   },
   methods: {
-    fetchTeachers(_page=1) {
-      // TODO: fetch teacher pagination data
-      apiClient.fetchTeachers({page:_page,size:3}).then((teachers) => {
-        this.teachers = teachers;
+    onNext() {
+      this.onLoading=true;
+      var calculateValue=this.paginationNumber+1;
+      apiClient.fetchTeachers({page:calculateValue,size:3}).then((data) => {
+        if(data.length>0){
+        this.teachers = data;
+        this.paginationNumber=calculateValue;
+        }
+        else{
+          createWebHashHistory
+        }
+        this.onLoading=false;
       });
     },
-    onNext() {
-      var calculateValue=this.paginationNumber+1;
-      if(calculateValue*3<=15){
-      this.paginationNumber=calculateValue;
-      this.fetchTeachers(this.paginationNumber);
-      }
-    },
     onPrev() {
+      this.onLoading=true;
       var calculateValue=this.paginationNumber-1;
-      if(calculateValue>=1){
-      this.paginationNumber=calculateValue;
-      this.fetchTeachers(this.paginationNumber);
-      }
+      apiClient.fetchTeachers({page:calculateValue,size:3}).then((data) => {
+        if(data.length>0){
+        this.teachers = data;
+        this.paginationNumber=calculateValue;
+        }
+        else{
+          alert('page does not exist!!');
+        }
+        this.onLoading=false;
+      });
     },
     seeMore(id) {
       this.selectedTeacherId = id;

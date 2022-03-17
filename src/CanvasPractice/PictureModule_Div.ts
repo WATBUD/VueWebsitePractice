@@ -149,17 +149,13 @@ export class PictureEditor {
 
 
     captureFootageMousedown(event: MouseEvent) {
-        console.log("%c captureFootageMousedown:", "color: red", event);
-        // if (this.isDragging) {
-        //   return;
-        // }
+        const page_XY= [event.pageX,event.pageY];
+        console.log("%c captureFootageMousedown:", "color: red", page_XY);
         this.isDragging=true;
+        this.startX = page_XY[0]-this.lastCaptureCoordinates[0];
+        this.startY = page_XY[1]-this.lastCaptureCoordinates[1];
         event.preventDefault();
         event.stopPropagation();
-        // update the starting drag position (== the current mouse position)
-        this.startX = event.offsetX;
-        this.startY = event.offsetY;
-        console.log("%c this:", "color: red", this);
     }
 
     captureFootageMouseup(event: MouseEvent) {
@@ -171,23 +167,13 @@ export class PictureEditor {
         if (!this.isDragging) {
            return;
         }
-        //<HTMLImageElement>
-        const element_Image:any = <HTMLImageElement>document.getElementById("Element_Image");
-        // event.preventDefault();
-        // event.stopPropagation();
-        // 滑鼠移動後和原本位置的距離
-
-
         // console.log("%c element_Image.getBoundingClientRect():", "color: red", element_Image.getBoundingClientRect());
         // console.log("%c element_Image.offsetLeft():", "color: red", element_Image.offsetLeft);
         // console.log("%c element_Image.offsetTop():", "color: red", element_Image.offsetTop);
         console.log("%c event.offsetX:", "color: red", event.offsetX);
         console.log("%c event.offsetY:", "color: red", event.offsetY);
         console.log("%c event:", "color: red", event);
-        const  dx = event.offsetX - this.startX;
-        const  dy = event.offsetY - this.startY;
-        this.lastCaptureCoordinates[0]=dx;
-        this.lastCaptureCoordinates[1]=dy;//*this.imageSize
+        this.lastCaptureCoordinates= [event.pageX - this.startX,event.pageY - this.startY];
         // update the starting drag position (== the current mouse position)
         this.canvasTranslate(this.lastCaptureCoordinates[0],this.lastCaptureCoordinates[1]);
         //console.log("%c captureFootageMousemove:", "color: red", event);
