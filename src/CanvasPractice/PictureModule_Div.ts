@@ -111,7 +111,7 @@ export class PictureEditor {
         load_img.style.marginLeft=0+'px';
         load_img.style.marginTop= 0+'px';
 
-        //_this.onEditing=false;
+        this.onEditing=false;
     }
 
     canvasTranslate(X:any,Y:any) {

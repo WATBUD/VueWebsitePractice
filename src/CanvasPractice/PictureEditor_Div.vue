@@ -33,7 +33,7 @@
           overflow: hidden;"
           @mousedown="pictureEditor.captureFootageMousedown"
         >
-          <canvas id="ImageFiles_canvas" style="position: absolute;" width="500" height="500"
+          <canvas id="ImageFiles_canvas" style="position: absolute;    visibility: hidden;" width="500" height="500"
           ></canvas>
 
           <img
@@ -87,8 +87,8 @@
         :src="item"
         :index="'img_'+index"
         :id="'img_'+index"
-        width="500"
-        height="500"
+        width="100"
+        height="100"
         alt
       />
     </div>
