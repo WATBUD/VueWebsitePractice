@@ -47,7 +47,6 @@ export default  {
   },
   methods: {
     routeDesignation() {
-      //this.$router.push('/two_sum_less_than_k')
       this.$router.push({
         path: "/",
         params: {
