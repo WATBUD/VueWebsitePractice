@@ -2,7 +2,19 @@
 <template>
 <div>
 <!-- <div@click="routerGo()">two_sum_less_than_k</div><br/> -->
+
 <div id="Area1" class="GroupArea" >
+  <div id="Basic exercises" class="list-group">
+    <input id="toggleTools" class="btn-toggle" type="checkbox" checked>
+    <label class="toggleBtn" for="toggleTools">Basic exercises</label>
+    <ul>
+    <li><router-link to="/ForEachAndMap">ForEachAndMap</router-link></li>
+    <li><router-link to="/HelloWorld">HelloWorld</router-link></li>
+
+    </ul>
+  </div>
+
+
   <div id="Practice Example" class="list-group">
     <input id="toggle" class="btn-toggle" type="checkbox" checked>
     <label class="toggleBtn" for="toggle">Practice Example</label>
@@ -21,7 +33,6 @@
     <li><router-link to="/PictureEditor_DragCircle">PictureEditor_DragCircle</router-link></li>
     </ul>
   </div>
-
 </div>
 
 </div>
