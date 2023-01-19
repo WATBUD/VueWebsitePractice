@@ -5,7 +5,7 @@
     class="github-corner"
     aria-label="View source on GitHub"
   >
-    <svg
+    <!-- <svg
       width="80"
       height="80"
       viewBox="0 0 250 250"
@@ -24,14 +24,14 @@
         fill="currentColor"
         class="octo-body"
       />
-    </svg>
+    </svg> -->
   </a>
 </template>
 
 <script>
 export default {
   name: 'GithubRibbon',
-  data: () => ({ url: 'https://github.com/AmirrezaNasiri/vue-modern-resume' }),
+  // data: () => ({ url: 'https://github.com/AmirrezaNasiri/vue-modern-resume' }),
 }
 </script>
 

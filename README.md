@@ -1,4 +1,22 @@
+
+
+<!-- Common plugins that need to be learned 
+Vuetify, Tailwind CSS
+
+
+
+
+-->
+
+
+
+
+
+
 # 002_pagination_store
+
+
+
 
 # Question
 

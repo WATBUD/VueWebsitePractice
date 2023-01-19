@@ -4,8 +4,8 @@
     light
   >
     <v-card-text class="text-xs-center">
-      <h4>OK ... OK ... My CV has just been finished here but not my journey!</h4>
-      <div>Don't believe me? keep scrolling!</div>
+      <h4>free time development</h4>
+      <div>keep scrolling!</div>
       <content-section>
         <v-timeline>
           <v-timeline-item
@@ -90,43 +90,8 @@ export default {
       {
         text: 'We all should be curious about it, shouldn\'t we?',
         from: 4,
-        to  : 4,
-      },
-      {
-        text: 'With a plan and persistence ...',
-        from: 5,
-        to  : 5,
-      },
-      {
-        text: 'We can do anything!',
-        from: 6,
-        to  : 6,
-      },
-      {
-        text: 'There is a good news:',
-        from: 7,
-        to  : 7,
-      },
-      {
-        text: 'Even you can do it!',
-        from: 8,
-        to  : 8,
-      },
-      {
-        text: 'Of course with a lot of hardship ... a LOT OF them! ...',
-        from: 9,
-        to  : 9,
-      },
-      {
-        text: 'But we\'re still alive, aren\'t we?',
-        from: 10,
-        to  : 10,
-      },
-      {
-        text: 'So we WILL do it. There is no option! These are things should be done, without any excuses!\nAnd HEY! There is no RESET button for your life.\nStop scrolling now and go do whatever you must 👌',
-        from: 11,
         to  : null,
-      },
+      }
     ],
   }),
   methods: {
@@ -154,7 +119,7 @@ export default {
         }
         this.toggleMessage = false
         this.toggleMessage = true
-      }, 3000)
+      }, 50)
     }, 500),
   },
 }

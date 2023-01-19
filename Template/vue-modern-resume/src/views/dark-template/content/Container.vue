@@ -7,15 +7,15 @@
       <content-section
         title="Who am I?"
       >
-        I'm a developer born in Iran and founder of <a href="http://delix.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=delix">Delix.ir</a>, <a href="https://bytegate.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bytegate">Bytegate.ir</a> and <a href="http://bobet.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bobet">Bobet.ir</a> and co-founder of <a href="https://smo.li/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=smoli">Smo.li</a>.<br>
-        I'm interested and skilled in different topics of Information Technology including programming, web development, and computer and network security.
+        I'm a Full Stack developer born in Tawain and founder of <br>
+        I'm interested and skilled in different topics of Information Technology including programming, web development, and computer.
       </content-section>
       <content-section
-        v-if="prouds"
-        title="What am I proud of?"
+        v-if="portfolios"
+        title="portfolio"
       >
         <v-layout
-          v-for="(proud, i) in prouds"
+          v-for="(proud, i) in portfolios"
           :key="i"
         >
           <v-flex
@@ -37,10 +37,7 @@
           </v-flex>
         </v-layout>
       </content-section>
-      <content-section
-        v-if="educations"
-        title="Education"
-      >
+      <content-section v-if="educations" title="Education" >
         <v-layout
           v-for="(education, i) in educations"
           :key="i"
@@ -59,28 +56,24 @@
           </v-flex>
         </v-layout>
       </content-section>
-      <content-section
-        v-if="skills"
-        id="to-timeline"
-        title="Skills"
-      >
-        <template slot="actions">
-          (% are relative not absolute)
-        </template>
+      <content-section v-if="skills" id="to-timeline" title="Skills" >
+        <!-- <template slot="actions">
+          (...)
+        </template> -->
         <v-layout wrap>
           <template
-            v-for="(skill, i) in skills"
+            v-for="(skill, index) in skills"
           >
             <v-flex
               v-if="skill.divider"
-              :key="i"
+              :key="index"
               md12
               xs12
               mb-4
             />
             <v-flex
               v-else
-              :key="i"
+              :key="index"
               md6
               xs12
             >
@@ -116,7 +109,7 @@ export default {
   name      : 'MainContent',
   components: { ContentSection },
   data      : () => ({
-    prouds: [
+    portfolios: [
       {
         icon  : 'mdi-help-rhombus-outline',
         text  : 'Answered 10M+ questions!',
@@ -140,18 +133,20 @@ export default {
     ],
     educations: [
       {
-        from       : '2015',
-        to         : '2019 (not finished yet)',
-        title      : 'Bachelor\'s degree, Information Technology',
-        location   : 'Seraj University',
-        description: 'Became a member of University Academic Association of Computer Science',
+        from       : '2012',
+        to         : '2016',
+        title      : 'Bachelor\'s degree, Department of Multimedia and Game Development',
+        location   : 'Chung Chou University',
+        description: 'University topics:飛絡力拳擊機遊戲程式，使用Unity game engine development，主要利用RS232與電路板連接，以C#陣列寫入指定記憶體位置下Command。\
+                      將遊戲以3D動作呈現在拳擊機，根據偵測光影速度表現分數至畫面。\
+                      時常利用空餘時間學習程式相關知識，期望從各個方面來完善自己，全面提高自己的綜合素質，鍛鍊了組織能力和溝通協調能力。',
       },
     ],
     skills: [
       {
         title: 'PHP',
         icon : 'mdi-language-php',
-        value: 95,
+        value: 60,
       },
       {
         title: 'JavaScript',
@@ -159,25 +154,14 @@ export default {
         value: 80,
       },
       {
-        title: 'Laravel Framework',
-        icon : 'mdi-laravel',
-        value: 90,
-      },
-      {
         title: 'Vue.js Framework',
         icon : 'mdi-vuejs',
+        value: 60,
+      },
+      {
+        title: 'C#',
+        icon : 'mdi-language-csharp',
         value: 90,
-      },
-      { divider: true },
-      {
-        title: 'Ubuntu Server',
-        icon : 'mdi-ubuntu',
-        value: 70,
-      },
-      {
-        title: 'CentOS Server',
-        icon : 'mdi-linux',
-        value: 47,
       },
       {
         title: 'Web Application Security',
@@ -185,25 +169,14 @@ export default {
         value: 80,
       },
       {
-        title: 'Test Driven Development',
-        icon : 'mdi-test-tube',
-        value: 26,
-      },
-      {
         title: 'Continuous Integration / Continuous Delivery',
         icon : 'mdi-truck-fast',
-        value: 35,
+        value: 60,
       },
       {
         title: 'Git',
         icon : 'mdi-git',
-        value: 67,
-      },
-      { divider: true },
-      {
-        title: 'Hardware Development',
-        icon : 'mdi-chip',
-        value: 29,
+        value: 60,
       },
       {
         title: 'C/C++',
@@ -212,14 +185,9 @@ export default {
       },
       { divider: true },
       {
-        title: 'Leadership',
+        title: 'teamwork',
         icon : 'mdi-account-group',
-        value: 68,
-      },
-      {
-        title: 'Content Marketing (+340 articles)',
-        icon : 'mdi-text',
-        value: 96,
+        value: 90,
       },
     ],
   }),

@@ -4,9 +4,12 @@
       color="grey lighten-4"
       size="120"
     >
-      <img
-        :src="publicPath('/img/avatar.jpg')"
-        alt="Amirrea Nasiri"
+      <!-- <img 
+        :src="publicPath('/img/myAvatar.png')"
+        alt="Louis"
+      > -->
+      <img 
+        alt="Louis"
       >
     </v-avatar>
   </div>
