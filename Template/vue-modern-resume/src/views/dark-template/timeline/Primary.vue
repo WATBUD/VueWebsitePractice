@@ -129,6 +129,27 @@ export default {
     items   : [
       {
         detailed   : true,
+        year       : 'July 2018 - August 2019',
+        transparent: true,
+        title      : 'ASP.NET Software Engineer',
+        html       : `
+<p class="list-item-company-name-and-job-type"><span class="list-item-company-name"><a href="https://www.cakeresume.com/orgs/%E7%B7%AF%E5%89%B5%E8%BB%9F%E9%AB%94%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8?id=1158776">緯創軟體股份有限公司</a></span></p>
+<p class="list-item-dates">七月&nbsp;2018&nbsp;-&nbsp;八月&nbsp;<span class="middot">2019&nbsp;</span><span class="profile_experience_work-period"><span class="year-count">1 年</span><span class="month-count">2 個月</span></span></p>
+<div class="pre-line"><span class="Linkify">● 主要專案有：</span></div>
+<div class="pre-line"><span class="Linkify">(1)銀行/保險/證券業系統開發、</span></div>
+<div class="pre-line"><span class="Linkify">(2) 半導體/面板/電子產業相關系統開發、</span></div>
+<div class="pre-line"><span class="Linkify">(3)通訊業系統開發、</span></div>
+<div class="pre-line"><span class="Linkify">(4) 資安系統開發 </span></div>
+<div class="pre-line"><span class="Linkify"><a href="http://2.xn--asp-v27fj36s.net/" target="_blank" rel="nofollow noopener noreferrer">2.擅長ASP.NET</a>/C#/<a href="http://asp.net/" target="_blank" rel="nofollow noopener noreferrer">ASP.NET</a>&nbsp;MVC、/SQL/Javascript/HTML </span></div>
+<div class="pre-line"><span class="Linkify">開發經歷:中國信託銀行貸後管理系統 台新銀行金流簽合系統 </span></div>
+<div class="pre-line"><span class="Linkify">銀行網站維護與開發:多國語系 業務流程修改 前端CSS設計等等 </span></div>
+<div class="pre-line"><span class="Linkify">駐點經歷:中國信託銀行專案開發 中國信託自動化測試部門</span></div>`,
+        image      : 'img/timeline/Algorithm Light Effects.png',
+        iconImage  : 'img/timeline/Algorithm Light Effects.png',
+      },
+      
+      {
+        detailed   : true,
         year       : 'October 2019 - May 2022',
         transparent: true,
         title      : 'Senior Full Stack Software Engineer',
@@ -151,26 +172,7 @@ export default {
         imageHeight: 200,
         icon       : 'mdi-web',
       },
-      {
-        detailed   : true,
-        year       : '2009',
-        transparent: true,
-        title      : 'Created Almas-Khor Game',
-        html       : `<h4>ASP.NET Software Engineer</h4>
-<p class="list-item-company-name-and-job-type"><span class="list-item-company-name"><a href="https://www.cakeresume.com/orgs/%E7%B7%AF%E5%89%B5%E8%BB%9F%E9%AB%94%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8?id=1158776">緯創軟體股份有限公司</a></span></p>
-<p class="list-item-dates">七月&nbsp;2018&nbsp;-&nbsp;八月&nbsp;<span class="middot">2019&nbsp;</span><span class="profile_experience_work-period"><span class="year-count">1 年</span><span class="month-count">2 個月</span></span></p>
-<div class="pre-line"><span class="Linkify">● 主要專案有：</span></div>
-<div class="pre-line"><span class="Linkify">(1)銀行/保險/證券業系統開發、</span></div>
-<div class="pre-line"><span class="Linkify">(2) 半導體/面板/電子產業相關系統開發、</span></div>
-<div class="pre-line"><span class="Linkify">(3)通訊業系統開發、</span></div>
-<div class="pre-line"><span class="Linkify">(4) 資安系統開發 </span></div>
-<div class="pre-line"><span class="Linkify"><a href="http://2.xn--asp-v27fj36s.net/" target="_blank" rel="nofollow noopener noreferrer">2.擅長ASP.NET</a>/C#/<a href="http://asp.net/" target="_blank" rel="nofollow noopener noreferrer">ASP.NET</a>&nbsp;MVC、/SQL/Javascript/HTML </span></div>
-<div class="pre-line"><span class="Linkify">開發經歷:中國信託銀行貸後管理系統 台新銀行金流簽合系統 </span></div>
-<div class="pre-line"><span class="Linkify">銀行網站維護與開發:多國語系 業務流程修改 前端CSS設計等等 </span></div>
-<div class="pre-line"><span class="Linkify">駐點經歷:中國信託銀行專案開發 中國信託自動化測試部門</span></div>`,
-        image      : 'img/timeline/Algorithm Light Effects.png',
-        iconImage  : 'img/timeline/Algorithm Light Effects.png',
-      },
+
       {
         year : 'May 2022 - February 2023',
         title: 'Unilever Food Solutions Senior IT Engineer',
@@ -185,6 +187,7 @@ export default {
         image    : '',
         iconImage: 'img/timeline/vue-registrar-logo.png',
       },
+
       {
         year : 'So far ...',
         title: 'At least 6 years of software and web related experience',

@@ -32,7 +32,7 @@ export default {
 
   methods:{
     getForEach(){
-    var null=null,
+    //var null=null,
 
       const numbers = ["pos1", "pos2", "pos3", "pos4", "pos5"];
       numbers.forEach((item,index,data) => {

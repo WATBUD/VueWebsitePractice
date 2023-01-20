@@ -1,6 +1,6 @@
 <template>
   <v-card
-    color="grey darken-3"
+    color="#01579B"
     dark
   >
     <v-card-text>
@@ -15,10 +15,10 @@
       </div>
 
       <sidebar-section :options="sections.info" />
-      <sidebar-section :options="sections.socials" />
+      <sidebar-section :options="sections.socials" color="yellow"/>
       <sidebar-section :options="sections.hobbies">
         <template v-slot:item="{item}">
-          <v-chip>
+          <v-chip color="blue">
             <v-avatar>
               <v-icon>
                 {{ item.icon }}

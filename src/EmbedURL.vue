@@ -20,7 +20,6 @@ export default {
     // TODO: focus to design teacher pagination state
     return {
       source:'/Native HTML/'+this.$route.params.inputEmbedURL+'.html',
-      test_Source1:'sadadad',
     };
   },
   created(){

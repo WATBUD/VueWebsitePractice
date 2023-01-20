@@ -1,0 +1,26 @@
+<html>
+Specificity=特異性
+<head>
+    <style>
+        #demo {
+            color: blue;
+        }
+        .test {
+            color: green;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="demo"  class="test" style="color: pink;">Hello World!</p>
+    <p id="demo" class="test" >Hello World!</p>
+
+    <!-- inline>id>class>html tag -->
+</body>
+
+</html>

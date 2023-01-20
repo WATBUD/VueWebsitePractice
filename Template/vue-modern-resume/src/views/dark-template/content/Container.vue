@@ -111,21 +111,6 @@ export default {
   data      : () => ({
     portfolios: [
       {
-        icon  : 'mdi-help-rhombus-outline',
-        text  : 'Answered 10M+ questions!',
-        source: '(Bytegate.ir post views)',
-      },
-      {
-        icon  : 'mdi-library-music',
-        text  : 'Made people enjoy and learn a new language for equivalent of 29+ years (older than myself!)',
-        source: '(Bobet.ir and its channel downloads)',
-      },
-      {
-        icon  : 'mdi-timer-sand',
-        text  : 'Saved +110 days of time of students, writers and etc!',
-        source: '(Delix.ir service usages)',
-      },
-      {
         icon  : 'mdi-account-multiple',
         text  : 'Tried to cover small part of 7 people expenses.',
         source: '(My awesome colleagues)',
@@ -143,6 +128,22 @@ export default {
       },
     ],
     skills: [
+      
+      {
+        title: 'C#',
+        icon : 'mdi-language-csharp',
+        value: 90,
+      },
+      {
+        title: 'Angular',
+        icon : 'mdi-language-csharp',
+        value: 90,
+      },
+      {
+        title: 'Web Application Security',
+        icon : 'mdi-shield-lock',
+        value: 80,
+      },
       {
         title: 'PHP',
         icon : 'mdi-language-php',
@@ -151,22 +152,12 @@ export default {
       {
         title: 'JavaScript',
         icon : 'mdi-language-javascript',
-        value: 80,
+        value: 60,
       },
       {
         title: 'Vue.js Framework',
         icon : 'mdi-vuejs',
         value: 60,
-      },
-      {
-        title: 'C#',
-        icon : 'mdi-language-csharp',
-        value: 90,
-      },
-      {
-        title: 'Web Application Security',
-        icon : 'mdi-shield-lock',
-        value: 80,
       },
       {
         title: 'Continuous Integration / Continuous Delivery',

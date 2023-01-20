@@ -78,20 +78,10 @@ export default {
         to  : 1,
       },
       {
-        text: 'And even more ... :)',
+        text: 'And even more',
         from: 2,
-        to  : 2,
-      },
-      {
-        text: 'Still curious?',
-        from: 3,
-        to  : 3,
-      },
-      {
-        text: 'We all should be curious about it, shouldn\'t we?',
-        from: 4,
         to  : null,
-      }
+      },
     ],
   }),
   methods: {
