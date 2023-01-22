@@ -2,6 +2,10 @@
 Specificity=特異性
 <head>
     <style>
+        *
+        {
+            color: #000000;
+        }
         #demo {
             color: blue;
         }
@@ -16,10 +20,10 @@ Specificity=特異性
 </head>
 
 <body>
-
-    <p id="demo"  class="test" style="color: pink;">Hello World!</p>
-    <p id="demo" class="test" >Hello World!</p>
-
+    <p id="demo"  class="test" style="color: pink;">inline-Style</p>
+    <p id="demo">id</p>
+    <p class="test">class</p>    
+    <p>html tag</p>
     <!-- inline>id>class>html tag -->
 </body>
 

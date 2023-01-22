@@ -10,6 +10,9 @@
     <ul>
     <li><router-link to="/ForEachAndMap">ForEachAndMap</router-link></li>
     <li><router-link to="/HelloWorld">HelloWorld</router-link></li>
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Specificity' }}">[CSS] Specificity</router-link></li>
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Box Model' }}">[CSS] Box Model</router-link></li>
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Transition' }}">[CSS] Transition</router-link></li>
 
     </ul>
   </div>
@@ -20,8 +23,6 @@
     <label class="toggleBtn" for="toggle">Practice Example</label>
     <ul>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'two_sum_less_than_k' }}">two_sum_less_than_k</router-link></li>
-    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Specificity' }}">[CSS] Specificity</router-link></li>
-    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Box Model' }}">[CSS] Box Model</router-link></li>
     <li><router-link to="/component_refactoring">component_refactoring</router-link></li>
     <li><router-link to="/pagination_store">pagination_store</router-link></li>
     </ul>

@@ -1,25 +1,33 @@
-
 <html>
-一個box的性質包含: margin, border, padding 和 content( width & height ) 。
+CSS box-sizing content-box 與border-box?<BR>
+一個box的性質包含: margin, border, padding 和 content( width & height ) 。<BR>
+Sort from inside to outside=>Content->Padding->Border=>Margin<BR>
+
 <head>
     <style>
-        #demo {
-            color: blue;
-        }
-        .test {
-            color: green;
+        .width_Border  {
+            width: 425px;
+            border: 2px solid blue;
         }
 
-        p {
-            color: red;
+        .width_Border_Padding_Margin {
+            border: 2px solid red;
+            width: 425px;
+            padding: 10px;
+            margin-top: 10px;
+            overflow: auto;
         }
     </style>
 </head>
 
 <body>
 
-    
-    <!-- inline>id>class>html tag -->
+    <div class="width_Border">
+        width: 425px;
+    </div>
+    <div class="width_Border_Padding_Margin">
+        width: 425px; & padding: 10px;
+    </div>
 </body>
 
 </html>

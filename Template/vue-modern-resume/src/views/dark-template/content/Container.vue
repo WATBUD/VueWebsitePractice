@@ -18,16 +18,16 @@
           v-for="(proud, i) in portfolios"
           :key="i"
         >
-          <v-flex
+          <!-- <v-flex
             md1
             xs3
           >
             <v-icon right>
               {{ proud.icon }}
             </v-icon>
-          </v-flex>
-          <v-flex
-            md11
+          </v-flex> -->
+          <v-flex  style="background:#26c6da;"
+            md12
             xs9
           >
             <p>

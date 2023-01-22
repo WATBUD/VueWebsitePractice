@@ -1,0 +1,38 @@
+<html>
+[CSS] Transition
+transition-property:指定影響漸變的CSS屬性<Br>
+transition-duration:漸變時間(The unit is s or ms)<Br>
+transition-delay:延遲漸變時間(The unit is s or ms)<Br>
+transition-timing-function:漸變速度曲線，default ease<Br>(X Y=> 0%,50%,10%,40%)
+<head>
+    <style>
+        h1 {
+            color: black;
+            height: 260px;
+            background-color: yellow;
+        }
+        h1:hover {
+            transition-property:background,color,height;
+            transition-delay:2s;
+            transition-duration:3s;
+            color: blue;
+            background-color: pink;
+            height: 520px
+        }
+
+        #h1Test {
+            color: blue;
+            background-color: pink;
+            height: 520px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>test</h1>
+    <h1 id="h1Test">test</h1>
+
+
+</body>
+
+</html>
