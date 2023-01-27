@@ -17,6 +17,7 @@
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Box Model' }}">[CSS] Box Model</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Transition' }}">[CSS] Transition</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 1.Two Sum' }}">Leetcode 1.Two Sum</router-link></li>
+        <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'BoxPseudoElement' }}">BoxPseudoElement</router-link></li>
 
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 3. Longest Substring Without Repeating Characters' }}">Leetcode 3. Longest Substring Without Repeating Characters</router-link></li>
 

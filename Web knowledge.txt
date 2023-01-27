@@ -40,6 +40,7 @@ SessionStorage 瀏覽器關掉後就會清除 不能分頁共享
 --Pseudo-classes 與 Pseudo-elements的差別在--
 Pseudo-classes(偽類) 常見的:hover/focus/visit，表示某元素的狀態(state)
 Pseudo-elements(偽元素) ::before、::after
+偽元素 需要有Content 才能顯示
 
 
 --什麼是CORS(Cross-Origin Resource Sharing)--
