@@ -15,9 +15,50 @@ Large (大号)	lg	桌面端	1264px > < 1904px*
 Extra large (超大号)	xl	4K 和超宽屏幕	> 1904px*
 
 
+--PUT & PATCH 的差異--
+put沒有要更新欄位資料會一起更新。
+
+patch僅會更新指定欄位資料 。
 
 
-Dependency Injection
+--Cookie 跟 Session 的差異是？--
+Cookie 瀏覽器的自動儲存機制 透過儲存 (cookie 中的所有數據在Client端就可以被修改)
+Session 在 Server端上紀錄使用者訊息，(回傳Session ID給Client端)
+Token 客戶端和伺服器端將訊息加密 存放在Client 伺服器解密Client得到訊息 token常被用來認證 
+
+--Web Storage (LocalStorage / SessionStorage)--
+HTML5提供兩種在客戶端儲存資料的方法 彌補了cookie儲存量小 有 5MB 的儲存空間。
+LocalStorage 不會過期，除非手動清除 Local storage 和 cookie 一樣，都是以鍵值對(key-value)的形式儲存
+SessionStorage 瀏覽器關掉後就會清除 不能分頁共享 
+
+
+--div與span區別及用法--
+使用div和span都可以，div佔用一行，span不會佔用一行，span內容佔多大寬度就多寬 大多使用在DIV行內細節元素
+
+
+
+--Pseudo-classes 與 Pseudo-elements的差別在--
+Pseudo-classes(偽類) 常見的:hover/focus/visit，表示某元素的狀態(state)
+Pseudo-elements(偽元素) ::before、::after
+
+
+--什麼是CORS(Cross-Origin Resource Sharing)--
+用來處理跨domain的請求，假設目前存在A domain，application要向其他domain請求資源時就會受到一些限制。
+
+
+MVC(Model View Controller) 模型（Model）to 視圖（View）to 控制器（Controller） loop
+MVP(Model View Presenter)  View 並不直接與 Model 交互 透過 Presenter  互相回傳
+MVVM(Model View ViewModel)  Model與ViewModel互相傳遞(View 和 View Model 的雙向綁定)  
+
+--HTTP Request Message Format--
+
+
+
+--GET & POST 兩者差異--
+對資源的增，刪，改，查操作，其實都可以通過GET/POST完成，不需要用到PUT和DELETE
+GET以 Query String（一種Key/Vaule的編碼方式）加在(URL)後面 URL資料大小受限
+POST 是將表單資料放在 message-body。必須要到FORM（表單） 不是通過URL傳值，資料大小不受限 但後端伺服器會限制大小
+
 --CSS中Padding和Margin的差別--
 
 Sort from inside to outside=>Content->Padding->Border=>Margin

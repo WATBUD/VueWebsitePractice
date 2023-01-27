@@ -2,7 +2,10 @@
 <template>
 <div>
 <!-- <div@click="routerGo()">two_sum_less_than_k</div><br/> -->
-
+  <v-alert
+  elevation="24"
+  type="success"
+></v-alert>
 <div id="Area1" class="GroupArea" >
   <div id="Basic exercises" class="list-group">
     <input id="toggleTools" class="btn-toggle" type="checkbox" checked>
@@ -13,6 +16,11 @@
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Specificity' }}">[CSS] Specificity</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Box Model' }}">[CSS] Box Model</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Transition' }}">[CSS] Transition</router-link></li>
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 1.Two Sum' }}">Leetcode 1.Two Sum</router-link></li>
+
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 3. Longest Substring Without Repeating Characters' }}">Leetcode 3. Longest Substring Without Repeating Characters</router-link></li>
+
+
 
     </ul>
   </div>

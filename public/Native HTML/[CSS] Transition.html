@@ -4,6 +4,7 @@ transition-property:指定影響漸變的CSS屬性<Br>
 transition-duration:漸變時間(The unit is s or ms)<Br>
 transition-delay:延遲漸變時間(The unit is s or ms)<Br>
 transition-timing-function:漸變速度曲線，default ease<Br>(X Y=> 0%,50%,10%,40%)
+
 <head>
     <style>
         h1 {
@@ -11,10 +12,11 @@ transition-timing-function:漸變速度曲線，default ease<Br>(X Y=> 0%,50%,10
             height: 260px;
             background-color: yellow;
         }
+
         h1:hover {
-            transition-property:background,color,height;
-            transition-delay:2s;
-            transition-duration:3s;
+            transition-property: background, color, height;
+            transition-delay: 2s;
+            transition-duration: 3s;
             color: blue;
             background-color: pink;
             height: 520px
@@ -34,5 +36,29 @@ transition-timing-function:漸變速度曲線，default ease<Br>(X Y=> 0%,50%,10
 
 
 </body>
+
+<script>
+    //setName2 = 'global2'
+    // class a {
+    //     var setName = 'global'
+    //     test() {
+    //         console.log(setName)
+    //         var setName = 'local'
+    //         console.log(setName)
+    //     }
+    // }
+
+    // test=new a();
+    // test.test();
+    //setName = 'global'
+    test();
+    function test() {
+        console.log(setName)
+        var setName = 'local'
+        console.log(setName)
+        var setName = 'local2222222'
+        console.log(setName)
+    }
+</script>
 
 </html>

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <style>
+    </style>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    var twoSum = function (numArray, target) {
+
+        for (let pos1 = 0; pos1 < numArray.length; pos1++) {
+            let remain = target - numArray[pos1]; 
+            console.log('%c pos1_remain:', 'color: red', remain);
+            for (let y = pos1 + 1; y <= numArray.length; y++) {
+                if (numArray[y] === remain){
+                    console.log('%c y = pos1 + 1:', 'color: red', y);
+                    return [pos1, y];
+                }
+            }
+        }
+    };
+    twoSum([15, 7, 11, 2], 9);
+
+</script>
+
+</html>

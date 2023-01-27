@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <style>
+    </style>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //這個function名稱是網站預設的
+
+
+    var lengthOfLongestSubstring = function (s) {
+        //宣告一個陣列，用來裝不重複的字元。
+        let arr = [];
+        //宣告要回傳的變數，用來裝不重複的字元的字串長度
+        let maxLen = 0;
+
+        //首先跑迴圈，把每個字元都看過
+        for (let i = 0; i < s.length; i++) {
+
+            //先比較現在這個字母有沒有在陣列中
+            if (arr.indexOf(s[i]) !== -1) {
+                 console.log('%c s[i]:', 'color: red', s[i]);
+                /*如果有的話，因為重複了，所以把從該位置之前的字元都從陣列中拿掉
+                陣列中保持著在該字串中連續，且不重複的字元*/
+                arr = arr.slice(arr.indexOf(s[i]) + 1);
+            };
+
+            //經過判斷後把目前這個字元加進陣列中
+            arr.push(s[i]);
+            console.log('%c arr:', 'color: red', arr);
+
+            //如果目前陣列的長度，大於目前要回傳的最大長度，就把要回傳的最大長度更新
+            if (maxLen < arr.length) {
+                maxLen = arr.length;
+            }
+        };
+
+        //最後回傳
+        return maxLen;
+    };
+        lengthOfLongestSubstring("pwwkew");
+
+
+
+</script>
+
+</html>
