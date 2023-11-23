@@ -42,10 +42,10 @@
           v-for="(education, i) in educations"
           :key="i"
         >
-          <v-flex md4>
+          <v-flex md2>
             {{ education.from }} - {{ education.to }}
           </v-flex>
-          <v-flex md8>
+          <v-flex md10>
             <strong v-if="education.title">{{ education.title }}</strong>
             <div v-if="education.location">
               <i>{{ education.location }}</i>
@@ -112,7 +112,24 @@ export default {
     portfolios: [
       {
         icon  : 'mdi-account-multiple',
-        text  : 'Tried to cover small part of 7 people expenses.',
+        text  : '<div>\
+<div>--------- ⌨Basic Skills---------</div>\
+<div>⌨Web Skill:HTML/CSS/JavaScript/.NET Webform/Node.js/PHP(self-taught)/Angular/Vue(self-study))/React(self-taught)</div>\
+<div>⌨Framework:Winform/.Net MVC/Unity3D game engine/Construct game engine</div>\
+<div>⌨Database:MySql/MSSQL</div>\
+<div>⌨Computer skill：</div>\
+<div>☁️Win7/Win10 system operation Office(Excel Word PowerPoint)/Power Query/VBA Macro/Windows Automation Program</div>\
+<div>☁️Refill system/hardware disassembly/assembly computer</div>\
+<div>☁️PowerDirector、Adobe Premiere video editing</div>\
+<div>⌨Development experience:-At least 6 years of software and web related experience-</div>\
+<div>1.PHP+MYSQL+XAMPP Front-end webpage and server setup</div>\
+<div>2.APS.NET/WebForm/MVC+MSSQL+IIS Front-end webpage and server setup</div>\
+<div>3.Unity3D+MYSQL+Python+Lua Gaming webpage, mobile game development</div>\
+<div>4.Construct Game Design and Development</div>\
+<div>5.Angular Front-end webpage and Node server setup</div>\
+<div>6.Angular/Electron/Typescript/Node.js Computer headset, mouse, keyboard, software design and development</div>\
+<div>7.Develop automated reports and programs</div>\
+</div>',
         source: '(My awesome colleagues)',
       },
     ],

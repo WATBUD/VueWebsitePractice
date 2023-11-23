@@ -1,0 +1,52 @@
+------------- High concurrency queue跟for update-------------
+使用單例模式取得queue(佇列),for update(SQL LOCK)
+-------MVC 模型（Model）to 視圖（View）to 控制器（Controller）-------------
+Model
+通常會定義資料結構、型態、存取。
+
+Controller
+比較簡易的講法敘述是:[中控中心]，負責處理主要商業邏輯，大部分處理Model 與 View 資料流的溝通。
+
+View
+將資料與CSS js 結合產生畫面，並呈現給使用者
+
+------------------GET & POST 兩者差異------------------
+對資源的增，刪，改，查操作，其實都可以通過GET/POST完成，不需要用到PUT和DELETE Browser
+[GET]
+1.Query String（Key/Vaule）Append after (URL)
+2.URL data size is limited by different browsers
+
+[POST] 
+1.is to put the [formdata] in the message-body。
+2.Must pass (FORM),not sent via (URL)，
+3.Unlimited data size 
+4.But the backend server will limit the size
+default PHP values are 2 MB for upload_max_filesize, and 8 MB for post_max_size.
+
+--Cookie 跟 Session 的差異是？--
+Cookie 瀏覽器的自動儲存機制 透過儲存 (cookie 中的所有數據在Client端就可以被修改)
+Session 在 Server端上紀錄使用者訊息，(回傳Session ID給Client端)
+Token 客戶端和伺服器端將訊息加密 存放在Client 伺服器解密Client得到訊息 token常被用來認證 
+
+--SQL  的執行順序如下--
+1.FROM
+2.ON
+3.JOIN
+4.Where
+5.GROUP BY
+6.WITH CUBE 或 WITH ROLLUP
+7.HAVING
+8.Select
+9.DISTINCT
+10.ORDER BY
+11.TOP
+--PUT & PATCH 的差異--
+put沒有要更新欄位資料會一起更新。
+
+patch僅會更新指定欄位資料 。
+
+
+
+
+
+

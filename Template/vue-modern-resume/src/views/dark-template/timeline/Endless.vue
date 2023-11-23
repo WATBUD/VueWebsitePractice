@@ -4,7 +4,7 @@
     light
   >
     <v-card-text class="text-xs-center">
-      <h4>free time development</h4>
+      <!-- <h4>free time development</h4> -->
       <content-section>
         <v-timeline>
           <v-timeline-item

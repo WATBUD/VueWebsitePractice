@@ -1,24 +1,30 @@
 Server Side Rendering (SSR)   伺服器宣染
 Client Side Rendering (CSR) 客戶端繪製
 Single Page Application (SPA) 單頁面應用程式
-SEO - Search Engine Optimization 
+SEO - (Search Engine Optimization) 搜尋引擎優化
 SPA 對 SEO 不好，要用 SSR 才能解決問題
 Browser =>JavaScript 去控制最常提到 BOM (Browser Object Model - 瀏覽器物件模型(網路連線, Local Storage)) 與 DOM (Document Object Model - 文件物件模型( HTML / CSS ))
 AJAX (Asynchronous JavaScript and XML) 
 DI(Dependency Injection) 依賴注入
 
+MVP(Model View Presenter)  View 並不直接與 Model 交互 透過 Presenter  互相回傳
+MVVM(Model View ViewModel)  Model與ViewModel互相傳遞(View 和 View Model 的雙向綁定)  
 
-Extra small (超小号)	xs	小型号到大型号的手机	< 600px
-Small (小号)	sm	小型号到中型号的平板	600px > < 960px
-Medium (中号)	md	大型号平板到手提电脑	960px > < 1264px*
-Large (大号)	lg	桌面端	1264px > < 1904px*
-Extra large (超大号)	xl	4K 和超宽屏幕	> 1904px*
+-------CSS自動填滿-------------
+flex shrink 1
 
+------------------GET & POST 兩者差異------------------
+對資源的增，刪，改，查操作，其實都可以通過GET/POST完成，不需要用到PUT和DELETE Browser
+[GET]
+1.Query String（Key/Vaule）Append after (URL)
+2.URL data size is limited by different browsers
 
---PUT & PATCH 的差異--
-put沒有要更新欄位資料會一起更新。
-
-patch僅會更新指定欄位資料 。
+[POST] 
+1.is to put the [formdata] in the message-body。
+2.Must pass (FORM),not sent via (URL)，
+3.Unlimited data size 
+4.But the backend server will limit the size
+default PHP values are 2 MB for upload_max_filesize, and 8 MB for post_max_size.
 
 
 --Cookie 跟 Session 的差異是？--
@@ -32,33 +38,62 @@ LocalStorage 不會過期，除非手動清除 Local storage 和 cookie 一樣�
 SessionStorage 瀏覽器關掉後就會清除 不能分頁共享 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------認識 Lambda/Closure（2）什麼是 Closure-------
+JavaScript 並沒有 private 之類的關鍵字，此時可以使用 Closure 加以模擬
+
+
+SPA 對 SEO 不好，要用 SSR 才能解決問題
+Browser =>JavaScript 去控制最常提到 BOM (Browser Object Model - 瀏覽器物件模型(網路連線, Local Storage)) 與 DOM (Document Object Model - 文件物件模型( HTML / CSS ))
+AJAX (Asynchronous JavaScript and XML) 
+DI(Dependency Injection) 依賴注入
+
+
+--PUT & PATCH 的差異--
+put沒有要更新欄位資料會一起更新。
+
+patch僅會更新指定欄位資料 。
+
+
+
+
+
+--Rwd--
+Extra small (超小號)	xs	小型號到大型號的手機	< 600px
+Small (小號)	sm	小型號到中型號的平板	600px > < 960px
+Medium (中號)	md	大型號平板到手提電腦	960px > < 1264px*
+Large (大號)	lg	桌面端	1264px > < 1904px*
+Extra large (超大號)	xl	4K 和超寬屏幕	> 1904px*
+
 --div與span區別及用法--
 使用div和span都可以，div佔用一行，span不會佔用一行，span內容佔多大寬度就多寬 大多使用在DIV行內細節元素
-
-
 
 --Pseudo-classes 與 Pseudo-elements的差別在--
 Pseudo-classes(偽類) 常見的:hover/focus/visit，表示某元素的狀態(state)
 Pseudo-elements(偽元素) ::before、::after
 偽元素 需要有Content 才能顯示
 
-
 --什麼是CORS(Cross-Origin Resource Sharing)--
 用來處理跨domain的請求，假設目前存在A domain，application要向其他domain請求資源時就會受到一些限制。
 
 
-MVC(Model View Controller) 模型（Model）to 視圖（View）to 控制器（Controller） loop
-MVP(Model View Presenter)  View 並不直接與 Model 交互 透過 Presenter  互相回傳
-MVVM(Model View ViewModel)  Model與ViewModel互相傳遞(View 和 View Model 的雙向綁定)  
 
 --HTTP Request Message Format--
 
 
-
---GET & POST 兩者差異--
-對資源的增，刪，改，查操作，其實都可以通過GET/POST完成，不需要用到PUT和DELETE
-GET以 Query String（一種Key/Vaule的編碼方式）加在(URL)後面 URL資料大小受限
-POST 是將表單資料放在 message-body。必須要到FORM（表單） 不是通過URL傳值，資料大小不受限 但後端伺服器會限制大小
 
 --CSS中Padding和Margin的差別--
 

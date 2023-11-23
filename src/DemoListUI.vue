@@ -17,10 +17,14 @@
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Box Model' }}">[CSS] Box Model</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: '[CSS] Transition' }}">[CSS] Transition</router-link></li>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 1.Two Sum' }}">Leetcode 1.Two Sum</router-link></li>
-        <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'BoxPseudoElement' }}">BoxPseudoElement</router-link></li>
-
-    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 3. Longest Substring Without Repeating Characters' }}">Leetcode 3. Longest Substring Without Repeating Characters</router-link></li>
-
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'BoxPseudoElement' }}">BoxPseudoElement</router-link>
+    </li>
+    <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'Leetcode 3. Longest Substring Without Repeating Characters' }}">Leetcode 3. Longest Substring Without Repeating Characters</router-link>
+    </li>
+    <li><router-link
+        :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'TheXMLHttpRequestObject' }}">
+        TheXMLHttpRequestObject</router-link>
+    </li>
 
 
     </ul>
@@ -28,8 +32,8 @@
 
 
   <div id="Practice Example" class="list-group">
-    <input id="toggle" class="btn-toggle" type="checkbox" checked>
-    <label class="toggleBtn" for="toggle">Practice Example</label>
+    <input id="PracticeExampleToggle" class="btn-toggle" type="checkbox" checked>
+    <label class="toggleBtn" for="PracticeExampleToggle">Practice Example</label>
     <ul>
     <li><router-link :to="{ name: 'EmbedURL', params: { inputEmbedURL: 'two_sum_less_than_k' }}">two_sum_less_than_k</router-link></li>
     <li><router-link to="/component_refactoring">component_refactoring</router-link></li>
@@ -37,8 +41,8 @@
     </ul>
   </div>
   <div id="Homemade Tools" class="list-group">
-    <input id="toggleTools" class="btn-toggle" type="checkbox" checked>
-    <label class="toggleBtn" for="toggleTools">Homemade Tools</label>
+    <input id="HomemadeToolsToggle" class="btn-toggle" type="checkbox" checked>
+    <label class="toggleBtn" for="HomemadeToolsToggle">Homemade Tools</label>
     <ul>
     <li><router-link to="/PictureEditor">PictureEditor</router-link></li>
     <li><router-link to="/PictureEditor_Div">PictureEditor_Div</router-link></li>
@@ -51,7 +55,7 @@
 </template>
 
 <script>
-import "./DemoListUI.css"
+import "./DemoListUI.css";
 export default  {
   name: "App",
   data() {

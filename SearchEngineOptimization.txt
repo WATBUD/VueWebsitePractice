@@ -1,0 +1,62 @@
+Server Side Rendering (SSR)   伺服器宣染
+Client Side Rendering (CSR) 客戶端繪製
+Single Page Application (SPA) 單頁面應用程式
+
+AJAX (Asynchronous JavaScript and XML) 
+DI(Dependency Injection) 依賴注入
+
+SPA 對 SEO 不好，要用 SSR 才能解決問題
+Browser =>JavaScript 去控制最常提到 BOM (Browser Object Model - 瀏覽器物件模型(網路連線, Local Storage)) 與 DOM (Document Object Model - 文件物件模型( HTML / CSS ))
+
+
+------------------說明什麼是SEO，並舉例說明3種實現方式------------------
+SEO - (Search Engine Optimization) 搜尋引擎優化
+SEO means the process of improving website to increase its visibility in search engines 
+
+improving website to increase its visibility in search engines 
+clear paragraph 
+SSR
+img alt 
+Big Keyword + Description
+
+------------------網站效能優化，有哪些方法------------------
+1、Improve Server Response time 提升伺服器效能 採用分散式系統
+2、use HTTP cache 使用伺服器快取
+
+3、Compress picture 
+Use canvas toDataURL to compress base64 into binary
+Size:PNG > JPG >SVG大到小
+Resolution: SVG > PNG > JPG.清楚到模糊
+
+4、Compress html/css/javascript 重命名程式碼
+6、Use CDN to improve website browsing speed. 
+7、Cancel Redirects
+
+
+
+------------------頁面之間參數的傳遞，有哪些方式------------------
+1. Session Cookie 
+2.window.open和window.opener
+window.open打開新視窗透過window.opener取得新視窗的document.getElementByID Value
+3. window.localStorage 客戶端儲存資料
+4. window.location.search (get url QueryString)
+
+
+--Cookie 跟 Session 的差異是？--
+Cookie 瀏覽器的自動儲存機制 透過儲存 (cookie 中的所有數據在Client端就可以被修改)  大小約 4kb 每次 request 時都會帶上
+Session 在 Server端上紀錄使用者訊息，(回傳Session ID給Client端)
+Token 客戶端和伺服器端將訊息加密 存放在Client 伺服器解密Client得到訊息 token常被用來認證 
+
+
+--Web Storage (LocalStorage / SessionStorage)--
+HTML5提供兩種在客戶端儲存資料的方法 彌補了cookie儲存量小 有 5MB 的儲存空間。
+LocalStorage 不會過期，除非手動清除 Local storage 和 cookie 一樣，都是以鍵值對(key-value)的形式儲存
+SessionStorage 瀏覽器關掉後就會清除 不能分頁共享 
+
+sessionStorage將資料儲存在session中，瀏覽器關閉也就沒了；而localStorage則一直將資料儲存在客戶端本地； 不管是sessionStorage，還是localStorage，可使用的API都相同。
+
+
+
+
+
+

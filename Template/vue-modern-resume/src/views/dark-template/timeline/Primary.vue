@@ -12,7 +12,7 @@
           <div>
             <v-switch
               v-model="detailed"
-              :label="detailed ? 'Detailed' : 'Summary'"
+              :label="detailed ? 'Detailed' : 'Expand to see more'"
             />
           </div>
         </template>

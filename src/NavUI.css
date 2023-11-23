@@ -1,16 +1,11 @@
 :host{
     width: 100%;
 }
-/* 
-
-li{
-    color: blue;
-    margin: 10px 0;
-} */
+ 
 
 .NavItemStyle:hover {
     /* color: rgb(76, 76, 76); */
-    background-color: rgb(76, 76, 76);; 
+    background-color: rgb(76, 76, 76);
 } 
 .NavItemStyle:active {
     color: yellow;

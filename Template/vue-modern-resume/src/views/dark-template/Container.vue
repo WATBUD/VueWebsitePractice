@@ -33,7 +33,7 @@
               <v-layout>
                 <v-flex md12>
                   <timeline-primary />
-                  <timeline-endless />
+                  <!-- <timeline-endless /> -->
                 </v-flex>
               </v-layout>
             </v-flex>
@@ -48,7 +48,7 @@
 import SidebarContainer from '@/views/dark-template/sidebar/Container'
 import ContentContainer from '@/views/dark-template/content/Container'
 import TimelinePrimary from '@/views/dark-template/timeline/Primary'
-import TimelineEndless from '@/views/dark-template/timeline/Endless'
+// import TimelineEndless from '@/views/dark-template/timeline/Endless'
 import LeaderLine from 'leader-line'
 import GithubRibbon from '@/views/dark-template/GithubRibbon'
 
@@ -56,7 +56,7 @@ export default {
   name      : 'DarkTemplateContainer',
   components: {
     GithubRibbon,
-    TimelineEndless,
+    // TimelineEndless,
     TimelinePrimary,
     ContentContainer,
     SidebarContainer,
